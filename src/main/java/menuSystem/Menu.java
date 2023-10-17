@@ -1,8 +1,6 @@
 package menuSystem;
 
-import databaseConnection.Database;
 import menuSystem.menues.Start;
-
 import java.util.List;
 import java.util.Scanner;
 
