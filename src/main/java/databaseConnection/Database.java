@@ -9,20 +9,18 @@ public class Database {
     ResultSet resultSet;
     PreparedStatement statement;
     Connection conn = null;
-
     public Database(){
         connectToDb();
-        getUsersByType("BIDDER");
+       /* getUsersByType("BIDDER");
         printUserResultSet();
         createNewUser("Bennie", "SELLER", "bennie@thejets.com");
         getUsersByType("SELLER");
-        printUserResultSet();
-
+        printUserResultSet();*/
     }
-
     void connectToDb(){
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://161.97.144.27/teneriffa?user=root&password=bowlingspeedyfins");
+            conn = DriverManager.getConnection("jdbc:mysql://161.97.144.27:8009/teneriffa?user=root&password=bowlingspeedyfins");
+            System.out.println("Connected successfully");
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
