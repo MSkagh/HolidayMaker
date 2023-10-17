@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up">
-      <change afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/ConnectToDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697445423045</updated>
       <workItem from="1697461341930" duration="1501000" />
-      <workItem from="1697528123552" duration="365000" />
+      <workItem from="1697528123552" duration="746000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <created>1697445477956</created>

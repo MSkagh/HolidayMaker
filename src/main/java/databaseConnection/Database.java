@@ -23,7 +23,6 @@ public class Database {
     void connectToDb(){
         try {
             conn = DriverManager.getConnection("jdbc:mysql://161.97.144.27/teneriffa?user=root&password=bowlingspeedyfins");
-            System.out.println(conn);
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
