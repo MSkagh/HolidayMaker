@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +33,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="dbrefactor" />
-                    <option name="lastUsedInstant" value="1697528182" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="databaseconnection" />
-                    <option name="lastUsedInstant" value="1697461524" />
+                    <option name="branchName" value="create-test" />
+                    <option name="lastUsedInstant" value="1697532035" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -75,7 +70,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dbrefactor",
+    "git-widget-placeholder": "create-test",
+    "last_opened_file_path": "/Users/erimara/Documents/code/Producera-och leverera-mjukvara-DEL-2/HolidayMaker/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,7 +88,7 @@
       <recent name="MenuSystem" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BasicTesting.hello">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HolidayMaker" />
@@ -100,6 +96,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BasicTesting.hello" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HolidayMaker" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BasicTesting" />
+      <option name="METHOD_NAME" value="hello" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BasicTesting.hello" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
