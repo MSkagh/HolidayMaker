@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-    </list>
+    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +132,7 @@
       <workItem from="1697461341930" duration="1501000" />
       <workItem from="1697528123552" duration="746000" />
       <workItem from="1697612255022" duration="1189000" />
-      <workItem from="1697613797345" duration="1424000" />
+      <workItem from="1697613797345" duration="2115000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <created>1697445477956</created>

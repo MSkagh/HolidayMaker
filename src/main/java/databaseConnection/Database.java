@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Database {
     ResultSet resultSet;
     PreparedStatement statement;
@@ -24,7 +27,8 @@ public class Database {
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
-    void getAllPackages(){
+    List<Package> getAllPackages(){
+        List<Package> tempList = new ArrayList<>();
         try {
             /*statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");*/
             statement = conn.prepareStatement("SELECT d.name, a.name, l.name, e.name FROM package\n" +
@@ -40,6 +44,7 @@ public class Database {
                 System.out.println("activity " + activity);
             }
         } catch (Exception ex) { ex.printStackTrace(); }
+        return tempList;
     }
 
     void createNewUser(String name, String type, String email){
