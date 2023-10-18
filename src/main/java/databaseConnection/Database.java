@@ -24,15 +24,20 @@ public class Database {
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
-
-
     void getAllPackages(){
         try {
-            statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");
+            /*statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");*/
+            statement = conn.prepareStatement("SELECT d.name, a.name, l.name, e.name FROM package\n" +
+                    "INNER JOIN teneriffa.destinations d ON package.destination = d.id\n" +
+                    "INNER JOIN teneriffa.activity a ON package.activity = a.id\n" +
+                    "INNER JOIN teneriffa.lodging l ON package.lodging = l.id\n" +
+                    "INNER JOIN teneriffa.extras e ON package.extras = e.id");
             resultSet = statement.executeQuery();
             while (resultSet.next()){
-                String name = resultSet.getString("name");
-                System.out.println("name " + name);
+                /*String name = resultSet.getString("name");*/
+                String activity = resultSet.getString("a.name");
+                /*System.out.println("name " + name);*/
+                System.out.println("activity " + activity);
             }
         } catch (Exception ex) { ex.printStackTrace(); }
     }
