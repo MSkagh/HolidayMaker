@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e720265e-f189-46de-8116-1364ba8f2d20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_11_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_11_45__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Extras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Extras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +93,7 @@
       <recent name="MenuSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BasicTesting.getAllPackages">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HolidayMaker" />

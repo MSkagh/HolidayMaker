@@ -47,10 +47,20 @@ public class Database {
 
                 /*String name = resultSet.getString("name");*/
                 List<Activity> activities = getActivityByDestination(resultSet.getInt("d.id"));
+                List<Activity> activityList = new ArrayList<>();
+                Activity activity = new Activity(
+                        resultSet.getString("a.name"),
+                        resultSet.getInt("a.startDate"),
+                        resultSet.getInt("a.endDate"),
+                        resultSet.getDouble("a.price"),
+                        null
+                );
+                activityList.add(activity);
+
                 tempList.add(new Package(
                         new Destination(resultSet.getString("d.name"), resultSet.getInt("d.startDate"), resultSet.getInt("d.endDate"),
                         resultSet.getDouble("d.price")),
-                        activities,
+                        activityList,
                         new Lodging(resultSet.getString("l.name"), resultSet.getInt("l.startDate"), resultSet.getInt("l.endDate"),
                         resultSet.getDouble("l.price"), resultSet.getInt("l.capacity"), resultSet.getString("l.destination")),
                         new Extras(resultSet.getString("e.name"), resultSet.getDouble("e.price"))));
