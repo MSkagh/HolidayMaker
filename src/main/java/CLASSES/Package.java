@@ -8,12 +8,14 @@ public class Package {
    private List<Activity> activityList = new ArrayList<>();
    private Lodging lodging;
    private Extras extras;
+   private double totalPrice;
 
    public Package(Destination destination, List<Activity> activityList, Lodging lodging, Extras extras) {
       this.destination = destination;
       this.activityList = activityList;
       this.lodging = lodging;
       this.extras = extras;
+      this.totalPrice = totalPrice;
    }
 
    public Destination getDestination() {
@@ -46,6 +48,22 @@ public class Package {
 
    public void setExtras(Extras extras) {
       this.extras = extras;
+   }
+
+   public double getTotalPrice() {
+      return totalPrice;
+   }
+
+   public void setTotalPrice() {
+      double activityCost = 0;
+      for ( Activity activity: activityList) {
+         activityCost += activity.getPrice();
+      }
+
+      int differenceInDaysAtLodging = lodging.getEndDate() - lodging.getStartDate();
+      double lodgingCost = differenceInDaysAtLodging * lodging.getPricePerDay();
+
+      this.totalPrice = lodgingCost + this.extras.getPrice() + activityCost;
    }
 }
 

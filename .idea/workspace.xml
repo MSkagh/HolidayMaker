@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up" />
+    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Setting up">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +37,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="create-test" />
-                    <option name="lastUsedInstant" value="1697532035" />
+                    <option name="branchName" value="dbrefactor" />
+                    <option name="lastUsedInstant" value="1697528182" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="databaseconnection" />
+                    <option name="lastUsedInstant" value="1697461524" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -60,33 +71,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/erimara/Documents/code/Producera-och leverera-mjukvara-DEL-2/HolidayMaker/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="MenuSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BasicTesting.checkConnection">
+  <component name="RunManager" selected="JUnit.BasicTesting.getAllPackages">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HolidayMaker" />
@@ -94,21 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicTesting.checkConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicTesting.getAllPackages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HolidayMaker" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BasicTesting" />
-      <option name="METHOD_NAME" value="checkConnection" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicTesting.hello" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HolidayMaker" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BasicTesting" />
-      <option name="METHOD_NAME" value="hello" />
+      <option name="METHOD_NAME" value="getAllPackages" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,8 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BasicTesting.checkConnection" />
-        <item itemvalue="JUnit.BasicTesting.hello" />
+        <item itemvalue="JUnit.BasicTesting.getAllPackages" />
       </list>
     </recent_temporary>
   </component>
@@ -131,8 +129,6 @@
       <updated>1697445423045</updated>
       <workItem from="1697461341930" duration="1501000" />
       <workItem from="1697528123552" duration="746000" />
-      <workItem from="1697612255022" duration="1189000" />
-      <workItem from="1697613797345" duration="2115000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <created>1697445477956</created>
@@ -153,6 +149,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

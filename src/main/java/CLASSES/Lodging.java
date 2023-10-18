@@ -4,11 +4,11 @@ public class Lodging {
     private String name;
     private int startDate;
     private int endDate;
-    private int pricePerDay;
+    private double pricePerDay;
     private int capacity;
     private String location;
 
-    public Lodging(String name, int startDate, int endDate, int pricePerDay, int capacity, String location) {
+    public Lodging(String name, int startDate, int endDate, double pricePerDay, int capacity, String location) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -41,7 +41,7 @@ public class Lodging {
         this.endDate = endDate;
     }
 
-    public int getPricePerDay() {
+    public double getPricePerDay() {
         return pricePerDay;
     }
 

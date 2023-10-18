@@ -40,8 +40,12 @@ public class Database {
             while (resultSet.next()){
                 /*String name = resultSet.getString("name");*/
                 String activity = resultSet.getString("a.name");
+                String destination = resultSet.getString("d.name");
+                String extras = resultSet.getString("e.name");
+                String lodging = resultSet.getString("l.name");
+
+
                 /*System.out.println("name " + name);*/
-                System.out.println("activity " + activity);
             }
         } catch (Exception ex) { ex.printStackTrace(); }
         return tempList;
