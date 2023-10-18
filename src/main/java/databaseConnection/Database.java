@@ -3,6 +3,7 @@ package databaseConnection;
 import CLASSES.*;
 import CLASSES.Package;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -34,7 +35,7 @@ public class Database {
         List<Package> tempList = new ArrayList<>();
         try {
             /*statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");*/
-            statement = conn.prepareStatement("SELECT d.name, d.startDate, d.endDate, d.price, " +
+            statement = conn.prepareStatement("SELECT d.id, d.name, d.startDate, d.endDate, d.price, " +
                     "a.name, a.startDate, a.endDate, a.price, l.name, l.startDate, l.endDate,l.price, l.capacity, l.destination, " +
                     "e.name, e.price FROM package\n" +
                     "INNER JOIN teneriffa.destinations d ON package.destination = d.id\n" +
@@ -43,22 +44,44 @@ public class Database {
                     "INNER JOIN teneriffa.extras e ON package.extras = e.id");
             resultSet = statement.executeQuery();
             while (resultSet.next()){
-                /*String name = resultSet.getString("name");*/
 
+                /*String name = resultSet.getString("name");*/
+                List<Activity> activities = getActivityByDestination(resultSet.getInt("d.id"));
                 tempList.add(new Package(
                         new Destination(resultSet.getString("d.name"), resultSet.getInt("d.startDate"), resultSet.getInt("d.endDate"),
                         resultSet.getDouble("d.price")),
-                        null,
+                        activities,
                         new Lodging(resultSet.getString("l.name"), resultSet.getInt("l.startDate"), resultSet.getInt("l.endDate"),
                         resultSet.getDouble("l.price"), resultSet.getInt("l.capacity"), resultSet.getString("l.destination")),
                         new Extras(resultSet.getString("e.name"), resultSet.getDouble("e.price"))));
 
-                /*System.out.println("name " + name);*/
             }
         } catch (Exception ex) { ex.printStackTrace(); }
         return tempList;
     }
+    List<Activity> getActivityByDestination(int id){
+        ResultSet resultSetTemp;
+        PreparedStatement statementTemp;
+        List<Activity> tempList = new ArrayList<>();
+        try {
+            statementTemp = conn.prepareStatement("SELECT activity.name, activity.startDate, activity.endDate, activity.price, d.name FROM activity\n" +
+                    "INNER JOIN teneriffa.destinations d ON activity.destinations = d.id \n" +
+                    "WHERE d.id = ?"
+            );
+            statementTemp.setInt(1, id);
+            resultSetTemp = statementTemp.executeQuery();
 
+            while(resultSetTemp.next()){
+                tempList.add(
+                        new Activity(resultSetTemp.getString("name"),
+                                resultSetTemp.getInt("startDate"),
+                                resultSetTemp.getInt("endDate"),
+                                resultSetTemp.getDouble("price"),
+                                resultSetTemp.getString("d.name")));
+            }
+        }catch (Exception ex) { ex.printStackTrace(); }
+        return tempList;
+    }
     /*
     tempList.add(new User(resultSet.getInt("id"),48
       resultSet.getString("name"),49
