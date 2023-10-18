@@ -10,6 +10,10 @@ public class BasicTesting {
     void setUp(){
         db = new Database();
     }
+
+    @Test
+    void getAllPackages(){
+    }
     @Test
     void checkConnection(){
         Assertions.assertNotNull(db);

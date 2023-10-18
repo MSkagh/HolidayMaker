@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 public class Database {
     ResultSet resultSet;
     PreparedStatement statement;
     Connection conn = null;
     public Database(){
         connectToDb();
+        getAllPackages();
        /* getUsersByType("BIDDER");
         printUserResultSet();
         createNewUser("Bennie", "SELLER", "bennie@thejets.com");
@@ -24,11 +24,16 @@ public class Database {
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
-    void getUsersByType(String type){
+
+
+    void getAllPackages(){
         try {
-            statement = conn.prepareStatement("SELECT * FROM users WHERE type = ?");
-            statement.setString(1,type);
+            statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");
             resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String name = resultSet.getString("name");
+                System.out.println("name " + name);
+            }
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
@@ -40,17 +45,5 @@ public class Database {
             statement.setString(3,email);
             statement.executeUpdate();
         } catch (Exception ex) { ex.printStackTrace(); }
-    }
-
-    void printUserResultSet(){
-        try {
-            while (resultSet.next()) {
-                String row = "id: " + resultSet.getString("id")
-                        + ", name: " + resultSet.getString("name")
-                        + ", type: " + resultSet.getString("type")
-                        + ", email: " + resultSet.getString("email") + ".";
-                System.out.println(row);
-            }
-        } catch (Exception ex){ ex.printStackTrace(); }
     }
 }
