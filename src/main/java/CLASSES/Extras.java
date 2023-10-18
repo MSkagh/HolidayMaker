@@ -24,4 +24,12 @@ public class Extras {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Extras{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

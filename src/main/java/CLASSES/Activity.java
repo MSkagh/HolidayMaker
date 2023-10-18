@@ -54,4 +54,15 @@ public class Activity {
     public void setDestinations(String destinations) {
         this.destinations = destinations;
     }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", price=" + price +
+                ", destinations='" + destinations + '\'' +
+                '}';
+    }
 }

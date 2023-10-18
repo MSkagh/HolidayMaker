@@ -1,5 +1,8 @@
 package databaseConnection;
 
+import CLASSES.*;
+import CLASSES.Package;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,11 +30,13 @@ public class Database {
         } catch (Exception ex) { ex.printStackTrace(); }
     }
 
-    List<Package> getAllPackages(){
+    public List<Package> getAllPackages(){
         List<Package> tempList = new ArrayList<>();
         try {
             /*statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");*/
-            statement = conn.prepareStatement("SELECT d.name, a.name, l.name, e.name FROM package\n" +
+            statement = conn.prepareStatement("SELECT d.name, d.startDate, d.endDate, d.price, " +
+                    "a.name, a.startDate, a.endDate, a.price, l.name, l.startDate, l.endDate,l.price, l.capacity, l.destination, " +
+                    "e.name, e.price FROM package\n" +
                     "INNER JOIN teneriffa.destinations d ON package.destination = d.id\n" +
                     "INNER JOIN teneriffa.activity a ON package.activity = a.id\n" +
                     "INNER JOIN teneriffa.lodging l ON package.lodging = l.id\n" +
@@ -39,11 +44,14 @@ public class Database {
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 /*String name = resultSet.getString("name");*/
-                String activity = resultSet.getString("a.name");
-                String destination = resultSet.getString("d.name");
-                String extras = resultSet.getString("e.name");
-                String lodging = resultSet.getString("l.name");
 
+                tempList.add(new Package(
+                        new Destination(resultSet.getString("d.name"), resultSet.getInt("d.startDate"), resultSet.getInt("d.endDate"),
+                        resultSet.getDouble("d.price")),
+                        null,
+                        new Lodging(resultSet.getString("l.name"), resultSet.getInt("l.startDate"), resultSet.getInt("l.endDate"),
+                        resultSet.getDouble("l.price"), resultSet.getInt("l.capacity"), resultSet.getString("l.destination")),
+                        new Extras(resultSet.getString("e.name"), resultSet.getDouble("e.price"))));
 
                 /*System.out.println("name " + name);*/
             }
@@ -51,6 +59,12 @@ public class Database {
         return tempList;
     }
 
+    /*
+    tempList.add(new User(resultSet.getInt("id"),48
+      resultSet.getString("name"),49
+     resultSet.getString("type"),50
+     resultSet.getString("email")));
+     */
     void createNewUser(String name, String type, String email){
         try {
             statement = conn.prepareStatement("INSERT INTO users SET name = ?, type = ?, email = ?");

@@ -64,4 +64,16 @@ public class Lodging {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Lodging{" +
+                "name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", pricePerDay=" + pricePerDay +
+                ", capacity=" + capacity +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

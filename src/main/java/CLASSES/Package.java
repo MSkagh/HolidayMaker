@@ -15,7 +15,6 @@ public class Package {
       this.activityList = activityList;
       this.lodging = lodging;
       this.extras = extras;
-      this.totalPrice = totalPrice;
    }
 
    public Destination getDestination() {
@@ -64,6 +63,17 @@ public class Package {
       double lodgingCost = differenceInDaysAtLodging * lodging.getPricePerDay();
 
       this.totalPrice = lodgingCost + this.extras.getPrice() + activityCost;
+   }
+
+   @Override
+   public String toString() {
+      return "Package{" +
+              "destination=" + destination +
+              ", activityList=" + activityList +
+              ", lodging=" + lodging +
+              ", extras=" + extras +
+              ", totalPrice=" + totalPrice +
+              '}';
    }
 }
 

@@ -1,3 +1,4 @@
+import CLASSES.Package;
 import databaseConnection.Database;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,11 +9,17 @@ public class BasicTesting {
 
     @BeforeEach
     void setUp(){
-        db = new Database();
+        this.db = new Database();
     }
 
     @Test
     void getAllPackages(){
+
+        for (int i = 0; i < db.getAllPackages(). size(); i++){
+            System.out.println(db.getAllPackages().get(i).toString());
+        }
+        Assertions.assertEquals(db.getAllPackages().get(0).getDestination().getName(), "Biryulëvo Zapadnoye");
+
     }
     @Test
     void checkConnection(){
