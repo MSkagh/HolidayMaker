@@ -67,13 +67,13 @@ public class Package {
 
    @Override
    public String toString() {
-      return "Package{" +
-              "destination=" + destination +
-              ", activityList=" + activityList +
-              ", lodging=" + lodging +
-              ", extras=" + extras +
-              ", totalPrice=" + totalPrice +
-              '}';
+      return "Package: " +
+              "destination: " + destination +
+              ", activityList: " + activityList +
+              ", lodging: " + lodging +
+              ", extras: " + extras +
+              ", totalPrice: " + totalPrice +
+               " \n";
    }
 }
 
