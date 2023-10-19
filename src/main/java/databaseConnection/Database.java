@@ -2,6 +2,7 @@ package databaseConnection;
 
 import CLASSES.*;
 import CLASSES.Package;
+import menuSystem.menues.HandleBookings;
 
 
 import java.sql.Connection;
@@ -100,13 +101,31 @@ public class Database {
      resultSet.getString("type"),50
      resultSet.getString("email")));
      */
-    void createNewUser(String name, String type, String email){
+   public void createNewBooking(String customerName, String email, String phoneNumber, Package packages){
         try {
-            statement = conn.prepareStatement("INSERT INTO users SET name = ?, type = ?, email = ?");
-            statement.setString(1,name);
-            statement.setString(2,type);
-            statement.setString(3,email);
+            statement = conn.prepareStatement("INSERT INTO confirmPackage SET customerName = ?, email = ?, phoneNumber = ?, package = ?");
+            statement.setString(1,customerName);
+            statement.setString(2,email);
+            statement.setString(3,phoneNumber);
+            statement.setInt(4,packages.getId());
             statement.executeUpdate();
         } catch (Exception ex) { ex.printStackTrace(); }
+    }
+
+    public List<ConfirmBooking> getBookings() {
+        List<ConfirmBooking> tempList = new ArrayList<>();
+        try {
+            statement = conn.prepareStatement("SELECT id, customerName, email, phoneNumber, package FROM confirmPackage"
+                    );
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                tempList.add(new ConfirmBooking(resultSet.getString("customerName"), resultSet.getString("email"),
+                        resultSet.getString("phoneNumber"), HandleBookings.getInstance().loopThroughPackageList(resultSet.getInt("package")).get(0)));
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return tempList;
     }
 }

@@ -1,5 +1,6 @@
 package menuSystem.menues;
 
+import CLASSES.ShowConfirmedBookings;
 import databaseConnection.Database;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
@@ -13,7 +14,9 @@ public class Booking extends Menu {
         menuLines = List.of(
                 new MenuLine(1, "Start", () -> Menu.setState(new Start())),
                 new MenuLine(2, "View all packages", () -> HandleBookings.getInstance().selectPackage() ),
-                new MenuLine(0, "Exit program", () -> System.exit(0)));
+                new MenuLine(3, "View bookings", ShowConfirmedBookings::showConfirmedBookings),
+                new MenuLine(0, "Exit program", () -> System.exit(0)))
+        ;
     }
 
     public void hej(){

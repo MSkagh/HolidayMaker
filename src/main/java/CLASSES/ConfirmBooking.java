@@ -14,6 +14,9 @@ public class ConfirmBooking {
         this.customerPackage = customerPackage;
     }
 
+    public String getCustomerName() {
+        return customerName;
+    }
 
     @Override
     public String toString() {

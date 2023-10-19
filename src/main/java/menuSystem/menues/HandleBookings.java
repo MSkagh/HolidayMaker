@@ -19,7 +19,7 @@ public class HandleBookings {
 
     private static Package chosenPackage;
 
-
+    List<ConfirmBooking> confirmedBookingList = new ArrayList<>();
     public static HandleBookings getInstance() {
         return instance;
     }
@@ -52,6 +52,14 @@ public class HandleBookings {
         return tempList;
     }
 
+    public List<ConfirmBooking> confirmedBookingList() {
+        List<ConfirmBooking> tempList = new ArrayList<>();
+        for (ConfirmBooking c : confirmedBookingList) {
+            tempList.add(c);
+        }
+        return tempList;
+    }
+
     public ConfirmBooking bookingQuestions(){
         System.out.print("Enter name: ");
         String name = scanner.next();
@@ -59,10 +67,12 @@ public class HandleBookings {
         String email = scanner.next();
         System.out.print("Enter phonenumber: ");
         String phonenumber = scanner.next();
-        ConfirmBooking bookingConfirmation = new ConfirmBooking(name, email, phonenumber, chosenPackage );
-        System.out.print(bookingConfirmation);
+        ConfirmBooking confirmedBooking = new ConfirmBooking(name, email, phonenumber, chosenPackage);
+        System.out.print(confirmedBooking);
+        db.createNewBooking(name, email, phonenumber,chosenPackage);
+        confirmedBookingList.add(confirmedBooking);
 
-        return bookingConfirmation;
+        return confirmedBooking;
     }
 
     public void confirmBooking(){
@@ -74,6 +84,7 @@ public class HandleBookings {
 
 
        }else {
+           Menu.setState(new Booking());
 
        }
 

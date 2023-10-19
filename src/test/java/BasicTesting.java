@@ -1,10 +1,13 @@
+import CLASSES.ConfirmBooking;
 import CLASSES.Package;
 import databaseConnection.Database;
 import menuSystem.menues.HandleBookings;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BasicTesting {
@@ -35,6 +38,15 @@ public class BasicTesting {
         Assertions.assertEquals(db.getAllPackages().get(0).getDestination().getName(), "Biryulëvo Zapadnoye");
 
     }
+
+    @Test
+    void createNewBooking(){
+         db.createNewBooking("Test", "test", "222", HandleBookings.getInstance().loopThroughPackageList(2).get(0));
+         ConfirmBooking testBooking = db.getBookings().get(db.getBookings().size() - 1);
+         Assertions.assertEquals("Test", testBooking.getCustomerName());
+
+    }
+
     @Test
     void checkConnection(){
         Assertions.assertNotNull(db);
@@ -44,6 +56,9 @@ public class BasicTesting {
         String hello = "hello";
         Assertions.assertEquals(hello, "hello");
     }
+
+
+
 
 
 }

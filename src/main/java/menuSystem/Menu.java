@@ -11,7 +11,7 @@ public abstract class Menu implements State {
     private static State state = new Start();
 
 
-    protected static void setState(State state){
+    public static void setState(State state){
         Menu.state = state;
     }
 
