@@ -35,13 +35,15 @@ public class Database {
         List<Package> tempList = new ArrayList<>();
         try {
             /*statement = conn.prepareStatement("SELECT name FROM package RIGHT JOIN teneriffa.destinations d ON package.destination = d.id");*/
-            statement = conn.prepareStatement("SELECT d.id, d.name, d.startDate, d.endDate, d.price, " +
+            statement = conn.prepareStatement("SELECT package.id, d.id, d.name, d.startDate, d.endDate, d.price, " +
                     "a.name, a.startDate, a.endDate, a.price, l.name, l.startDate, l.endDate,l.price, l.capacity, l.destination, " +
                     "e.name, e.price FROM package\n" +
                     "INNER JOIN teneriffa.destinations d ON package.destination = d.id\n" +
                     "INNER JOIN teneriffa.activity a ON package.activity = a.id\n" +
                     "INNER JOIN teneriffa.lodging l ON package.lodging = l.id\n" +
-                    "INNER JOIN teneriffa.extras e ON package.extras = e.id");
+                    "INNER JOIN teneriffa.extras e ON package.extras = e.id \n" +
+                    "ORDER BY package.id");
+
             resultSet = statement.executeQuery();
             while (resultSet.next()){
 
@@ -57,7 +59,7 @@ public class Database {
                 );
                 activityList.add(activity);
 
-                tempList.add(new Package(
+                tempList.add(new Package(resultSet.getInt("package.id"),
                         new Destination(resultSet.getString("d.name"), resultSet.getInt("d.startDate"), resultSet.getInt("d.endDate"),
                         resultSet.getDouble("d.price")),
                         activityList,

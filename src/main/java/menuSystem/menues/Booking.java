@@ -12,7 +12,7 @@ public class Booking extends Menu {
         menuTitle = "Bookings menu";
         menuLines = List.of(
                 new MenuLine(1, "Start", () -> Menu.setState(new Start())),
-                new MenuLine(2, "View all packages", () -> HandleBookings.getInstance().viewPackages() ),
+                new MenuLine(2, "View all packages", () -> HandleBookings.getInstance().selectPackage() ),
                 new MenuLine(0, "Exit program", () -> System.exit(0)));
     }
 

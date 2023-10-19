@@ -9,8 +9,10 @@ public class Package {
    private Lodging lodging;
    private Extras extras;
    private double totalPrice;
+   private int id;
 
-   public Package(Destination destination, List<Activity> activityList, Lodging lodging, Extras extras) {
+   public Package(int id, Destination destination, List<Activity> activityList, Lodging lodging, Extras extras) {
+      this.id = id;
       this.destination = destination;
       this.activityList = activityList;
       this.lodging = lodging;
@@ -65,9 +67,14 @@ public class Package {
       this.totalPrice = lodgingCost + this.extras.getPrice() + activityCost;
    }
 
+   public int getId() {
+      return id;
+   }
+
    @Override
    public String toString() {
-      return "Package: " +
+      return  id +"."  +
+              " Package: " +
               "destination: " + destination +
               ", activityList: " + activityList +
               ", lodging: " + lodging +
