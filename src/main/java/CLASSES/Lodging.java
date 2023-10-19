@@ -67,13 +67,13 @@ public class Lodging {
 
     @Override
     public String toString() {
-        return "Lodging{" +
-                "name='" + name + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", pricePerDay=" + pricePerDay +
-                ", capacity=" + capacity +
-                ", location='" + location + '\'' +
-                '}';
+        return  """
+                {"name": %s,
+                "startDate" : %s,
+                "endDate" : %s,
+                "pricePerDay" : %s,
+                "capacity" : %s,
+                "location" : %s}
+                """.formatted(name,startDate,endDate,pricePerDay,capacity,location);
     }
 }

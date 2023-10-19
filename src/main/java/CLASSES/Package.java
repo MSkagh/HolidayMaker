@@ -4,17 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Package {
+   public String name;
    private Destination destination;
-   private List<Activity> activityList = new ArrayList<>();
+   private Activity activity;
    private Lodging lodging;
    private Extras extras;
    private double totalPrice;
 
-   public Package(Destination destination, List<Activity> activityList, Lodging lodging, Extras extras) {
+   public Package(String name, Destination destination, Activity activity, Lodging lodging, Extras extras) {
+      this.name = name;
       this.destination = destination;
-      this.activityList = activityList;
+      this.activity = activity;
       this.lodging = lodging;
       this.extras = extras;
+   }
+
+   public String getName() {
+      return name;
    }
 
    public Destination getDestination() {
@@ -25,12 +31,12 @@ public class Package {
       this.destination = destination;
    }
 
-   public List<Activity> getActivityList() {
-      return activityList;
+   public Activity getActivityList() {
+      return activity;
    }
 
-   public void setActivityList(List<Activity> activityList) {
-      this.activityList = activityList;
+   public void setActivityList(Activity activity) {
+      this.activity = activity;
    }
 
    public Lodging getLodging() {
@@ -55,9 +61,9 @@ public class Package {
 
    public void setTotalPrice() {
       double activityCost = 0;
-      for ( Activity activity: activityList) {
+
          activityCost += activity.getPrice();
-      }
+
 
       int differenceInDaysAtLodging = lodging.getEndDate() - lodging.getStartDate();
       double lodgingCost = differenceInDaysAtLodging * lodging.getPricePerDay();
@@ -67,13 +73,12 @@ public class Package {
 
    @Override
    public String toString() {
-      return "Package{" +
-              "destination=" + destination +
-              ", activityList=" + activityList +
-              ", lodging=" + lodging +
-              ", extras=" + extras +
-              ", totalPrice=" + totalPrice +
-              '}';
+      if (getDestination() != null && activity != null && lodging != null) {
+         return "Destination: " + destination.getName() +
+                 " | Activities: " + activity.getName() +
+                 " | Lodging: " + lodging.getName();
+      }
+      return "The package " + getName() + " is incomplete";
    }
 }
 
