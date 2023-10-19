@@ -1,8 +1,12 @@
 import CLASSES.Package;
 import databaseConnection.Database;
+import menuSystem.menues.HandleBookings;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Scanner;
+
 public class BasicTesting {
 
     protected Database db;
@@ -11,6 +15,16 @@ public class BasicTesting {
     void setUp(){
         this.db = new Database();
     }
+
+
+    @Test
+    void choice(){
+        int exId = 2;
+        int actualId = 2;
+
+        Assertions.assertEquals(exId, HandleBookings.getInstance().loopThroughPackageList(actualId).get(0).getId() );
+
+            }
 
     @Test
     void getAllPackages(){

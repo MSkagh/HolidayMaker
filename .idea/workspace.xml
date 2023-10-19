@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="modified handlebooking, menu prints out a list">
+    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="can now choose a package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CLASSES/ConfirmBooking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +117,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BasicTesting.choice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HolidayMaker" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BasicTesting" />
+      <option name="METHOD_NAME" value="choice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicTesting.getAllPackages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HolidayMaker" />
       <option name="PACKAGE_NAME" value="" />
@@ -130,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicTesting.choice" />
         <item itemvalue="JUnit.BasicTesting.getAllPackages" />
         <item itemvalue="JUnit.BasicTesting.checkConnection" />
       </list>
@@ -168,7 +178,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1697702591347</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="can now choose a package">
+      <option name="closed" value="true" />
+      <created>1697706241072</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1697706241073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +210,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up" />
     <MESSAGE value="modified handlebooking, menu prints out a list" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified handlebooking, menu prints out a list" />
+    <MESSAGE value="can now choose a package" />
+    <option name="LAST_COMMIT_MESSAGE" value="can now choose a package" />
   </component>
 </project>

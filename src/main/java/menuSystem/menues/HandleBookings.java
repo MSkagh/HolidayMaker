@@ -1,9 +1,11 @@
 package menuSystem.menues;
 
+import CLASSES.ConfirmBooking;
 import CLASSES.Package;
 import databaseConnection.Database;
 import menuSystem.Menu;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,33 +17,70 @@ public class HandleBookings {
     Scanner scanner = new Scanner(System.in);
     public static final HandleBookings instance = new HandleBookings();
 
+    private static Package chosenPackage;
 
 
-    public static HandleBookings getInstance(){
+    public static HandleBookings getInstance() {
         return instance;
     }
 
-    public void selectPackage(){
+    public void selectPackage() {
         viewPackages();
     }
 
-    private void choice(){
-        System.out.println("Select package");
-        int packageChoice = scanner.nextInt();
-
-        for (Package p : packageList){
-          int packageId = p.getId();
-            if (packageChoice == packageId) {
-                System.out.println(p);
-            }
-        }
-
+    public List<Package> getPackageList() {
+        return packageList;
     }
 
+    private void choice() {
+
+        System.out.println("Select package");
+        int packageChoice = scanner.nextInt();
+        chosenPackage = loopThroughPackageList(packageChoice).get(0);
+        confirmBooking();
+    }
+
+    public List<Package> loopThroughPackageList(int packageChoice) {
+        List<Package> tempList = new ArrayList<>();
+        for (Package p : packageList) {
+            int packageId = p.getId();
+            if (packageChoice == packageId) {
+                System.out.println(p);
+                tempList.add(p);
+            }
+        }
+        return tempList;
+    }
+
+    public ConfirmBooking bookingQuestions(){
+        System.out.print("Enter name: ");
+        String name = scanner.next();
+        System.out.print("Enter email: ");
+        String email = scanner.next();
+        System.out.print("Enter phonenumber: ");
+        String phonenumber = scanner.next();
+        ConfirmBooking bookingConfirmation = new ConfirmBooking(name, email, phonenumber, chosenPackage );
+        System.out.print(bookingConfirmation);
+
+        return bookingConfirmation;
+    }
+
+    public void confirmBooking(){
+        System.out.print("Are you really sure? (y/n)");
+       String choice = scanner.next();
+
+       if (choice.equals("y")){
+           bookingQuestions();
+
+
+       }else {
+
+       }
+
+    }
     private void viewPackages(){
         System.out.println(packageList);
         choice();
     }
-
     }
 
