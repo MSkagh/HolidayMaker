@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="added ConfirmBooking class with functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/ViewList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="added viewList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/ConfirmBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTesting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/databaseConnection/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/databaseConnection/DatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +238,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1697717143095</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="added viewList">
+      <option name="closed" value="true" />
+      <created>1697794364103</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1697794364104</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +272,7 @@
     <MESSAGE value="modified handlebooking, menu prints out a list" />
     <MESSAGE value="can now choose a package" />
     <MESSAGE value="added ConfirmBooking class with functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ConfirmBooking class with functionality" />
+    <MESSAGE value="added viewList" />
+    <option name="LAST_COMMIT_MESSAGE" value="added viewList" />
   </component>
 </project>

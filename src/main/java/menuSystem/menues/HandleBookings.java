@@ -1,6 +1,6 @@
 package menuSystem.menues;
 
-import CLASSES.ConfirmBooking;
+import CLASSES.Customer;
 import CLASSES.Package;
 import databaseConnection.Database;
 import menuSystem.Menu;
@@ -19,7 +19,7 @@ public class HandleBookings {
 
     private static Package chosenPackage;
 
-    List<ConfirmBooking> confirmedBookingList = new ArrayList<>();
+    List<Customer> confirmedBookingList = new ArrayList<>();
     public static HandleBookings getInstance() {
         return instance;
     }
@@ -52,9 +52,9 @@ public class HandleBookings {
         return tempList;
     }
 
-    public List<ConfirmBooking> confirmedBookingList() {
-        List<ConfirmBooking> tempList = new ArrayList<>();
-        for (ConfirmBooking c : confirmedBookingList) {
+    public List<Customer> confirmedBookingList() {
+        List<Customer> tempList = new ArrayList<>();
+        for (Customer c : confirmedBookingList) {
             tempList.add(c);
         }
         return tempList;

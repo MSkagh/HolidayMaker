@@ -21,6 +21,7 @@ public class Database {
     private List<Destination> destinationList = new ArrayList<>();
     private List<Activity> activityList = new ArrayList<>();
     private List<Lodging> lodgingList = new ArrayList<>();
+    private List<Customer> customerList = new ArrayList<>();
 
     public Database(){
         connectToDb();
@@ -45,6 +46,7 @@ public class Database {
     public List<Lodging> getAllLodgings(){
         return lodgingList;
     }
+    public List<Customer> getAllCustomer(){ return customerList; }
 
     //FUNCTIONS THAT UPDATES THE LISTS
     void updateDatabase(){
@@ -52,6 +54,7 @@ public class Database {
         updateDestinations();
         updateLodgings();
         updateActivities();
+        updateCustomers();
     }
     void updatePackages(){
         packageList = new ArrayList<>();
@@ -189,6 +192,33 @@ public class Database {
             }
 
         } catch (Exception ex) { ex.printStackTrace(); }
+    }
+    void updateCustomers(){
+        customerList = new ArrayList<>();
+        try {
+            statement = conn.prepareStatement("""
+                    SELECT\s
+                          id,
+                        customerName,
+                          email,
+                          phoneNumber,
+                          packageId
+                      FROM Customers;
+                            """);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                customerList.add(new Customer(
+                        resultSet.getInt("id"),
+                        resultSet.getString("customerName"),
+                        resultSet.getString("email"),
+                        resultSet.getString("phoneNumber"),
+                        resultSet.getInt("packageId")
+
+                ));
+            }
+
+        } catch (Exception ex) { ex.printStackTrace(); }
+
     }
 
     // CREATION FUNCTIONS

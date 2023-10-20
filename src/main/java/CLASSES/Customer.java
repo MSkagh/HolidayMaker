@@ -1,17 +1,19 @@
 package CLASSES;
 
-public class ConfirmBooking {
+public class Customer {
 
+    private int id;
     private String customerName;
     private String customerEmail;
     private String customerPhoneNumber;
-    private Package customerPackage;
+    private int packageId;
 
-    public ConfirmBooking(String customerName, String customerEmail, String customerPhoneNumber, Package customerPackage) {
+    public Customer(int id, String customerName, String customerEmail, String customerPhoneNumber, int packageId) {
+        this.id = id;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.customerPhoneNumber = customerPhoneNumber;
-        this.customerPackage = customerPackage;
+        this.packageId = packageId;
     }
 
     public String getCustomerName() {
