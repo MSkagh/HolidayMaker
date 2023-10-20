@@ -26,7 +26,7 @@ public class Customer {
                 "customerName: '" + customerName + '\'' +
                 ", customerEmail: '" + customerEmail + '\'' +
                 ", customerPhoneNumber: '" + customerPhoneNumber + '\'' +
-                ", customerPackage: " + customerPackage
+                ", customerPackage: " + packageId
                 ;
     }
 }
