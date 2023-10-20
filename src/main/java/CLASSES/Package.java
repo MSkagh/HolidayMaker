@@ -5,16 +5,17 @@ import java.util.List;
 
 public class Package {
    private Destination destination;
-   private List<Activity> activityList = new ArrayList<>();
+   private Activity activity;
    private Lodging lodging;
    private Extras extras;
    private double totalPrice;
    private int id;
-
-   public Package(int id, Destination destination, List<Activity> activityList, Lodging lodging, Extras extras) {
+   private String name;
+   public Package(int id, String name, Destination destination, Activity activity, Lodging lodging, Extras extras) {
       this.id = id;
+      this.name = name;
       this.destination = destination;
-      this.activityList = activityList;
+      this.activity = activity;
       this.lodging = lodging;
       this.extras = extras;
    }
@@ -27,12 +28,12 @@ public class Package {
       this.destination = destination;
    }
 
-   public List<Activity> getActivityList() {
-      return activityList;
+   public Activity getActivityList() {
+      return activity;
    }
 
-   public void setActivityList(List<Activity> activityList) {
-      this.activityList = activityList;
+   public void setActivityList(Activity activity) {
+      this.activity = activity;
    }
 
    public Lodging getLodging() {
@@ -57,9 +58,8 @@ public class Package {
 
    public void setTotalPrice() {
       double activityCost = 0;
-      for ( Activity activity: activityList) {
-         activityCost += activity.getPrice();
-      }
+
+      activityCost += activity.getPrice();
 
       int differenceInDaysAtLodging = lodging.getEndDate() - lodging.getStartDate();
       double lodgingCost = differenceInDaysAtLodging * lodging.getPricePerDay();
@@ -76,7 +76,7 @@ public class Package {
       return  id +"."  +
               " Package: " +
               "destination: " + destination +
-              ", activityList: " + activityList +
+              ", activityList: " + activity +
               ", lodging: " + lodging +
               ", extras: " + extras +
               ", totalPrice: " + totalPrice +

@@ -60,7 +60,7 @@ public class HandleBookings {
         return tempList;
     }
 
-    public ConfirmBooking bookingQuestions(){
+  /*  public ConfirmBooking bookingQuestions(){
         System.out.print("Enter name: ");
         String name = scanner.next();
         System.out.print("Enter email: ");
@@ -69,18 +69,18 @@ public class HandleBookings {
         String phonenumber = scanner.next();
         ConfirmBooking confirmedBooking = new ConfirmBooking(name, email, phonenumber, chosenPackage);
         System.out.print(confirmedBooking);
-        db.createNewBooking(name, email, phonenumber,chosenPackage);
+       *//* db.createNewBooking(name, email, phonenumber,chosenPackage);*//*
         confirmedBookingList.add(confirmedBooking);
 
         return confirmedBooking;
-    }
+    }*/
 
     public void confirmBooking(){
         System.out.print("Are you really sure? (y/n)");
        String choice = scanner.next();
 
        if (choice.equals("y")){
-           bookingQuestions();
+           /*bookingQuestions();*/
 
 
        }else {

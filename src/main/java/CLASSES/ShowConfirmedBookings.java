@@ -14,9 +14,9 @@ private static final ShowConfirmedBookings instance = new ShowConfirmedBookings(
         return instance;
     }
     public void showConfirmedBookings(){
-        List<ConfirmBooking> list = db.getBookings();
+        /*List<ConfirmBooking> list = db.getBookings();*/
      /*List<ConfirmBooking> list = HandleBookings.getInstance().confirmedBookingList();*/
-     System.out.println(list);
+     /*System.out.println(list);*/
     }
 
 

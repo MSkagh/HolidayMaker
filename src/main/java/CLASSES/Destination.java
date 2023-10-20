@@ -47,11 +47,11 @@ public class Destination {
 
     @Override
     public String toString() {
-        return "Destination{" +
-                "name='" + name + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", price=" + price +
-                '}';
+        return """
+                {"name" : %s,
+                "startDate" : %s,
+                "endDate" : %s,
+                "price" : %s}
+                """.formatted(name,startDate,endDate,price);
     }
 }

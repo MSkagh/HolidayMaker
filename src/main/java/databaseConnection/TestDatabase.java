@@ -13,7 +13,7 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
-public class Database {
+public class TestDatabase {
     ResultSet resultSet;
     PreparedStatement statement;
     Connection conn = null;
@@ -22,7 +22,7 @@ public class Database {
     private List<Activity> activityList = new ArrayList<>();
     private List<Lodging> lodgingList = new ArrayList<>();
 
-    public Database(){
+    public TestDatabase(){
         connectToDb();
         updateDatabase();
     }
@@ -119,7 +119,7 @@ public class Database {
                           Destination -> '$.startDate',
                           Destination -> '$.endDate',
                           Destination -> '$.price'
-                      FROM HolidayMaker.Destinations;
+                      FROM Destinations;
                             """);
             resultSet = statement.executeQuery();
             while (resultSet.next()){

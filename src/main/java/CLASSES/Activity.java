@@ -5,14 +5,13 @@ public class Activity {
     private int startDate;
     private int endDate;
     private double price;
-    private String destinations;
-
-    public Activity(String name, int startDate, int endDate, double price, String destinations) {
+    private String location;
+    public Activity(String name, int startDate, int endDate, double price, String location) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
-        this.destinations = destinations;
+        this.location = location;
     }
 
     public String getName() {
@@ -47,22 +46,23 @@ public class Activity {
         this.price = price;
     }
 
-    public String getDestinations() {
-        return destinations;
+    public String getLocation() {
+        return location;
     }
 
-    public void setDestinations(String destinations) {
-        this.destinations = destinations;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
     public String toString() {
-        return "Activity{" +
-                "name='" + name + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", price=" + price +
-                ", destinations='" + destinations + '\'' +
-                '}';
+        return """
+                {"name":%s,
+                "startDate": %s,
+                "endDate": %s,
+                "price": %s,
+                "location": %s
+                }
+                """.formatted(name,startDate,endDate,price,location);
     }
 }
