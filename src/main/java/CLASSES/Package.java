@@ -20,6 +20,10 @@ public class Package {
       this.extras = extras;
    }
 
+   public String getName() {
+      return name;
+   }
+
    public Destination getDestination() {
       return destination;
    }

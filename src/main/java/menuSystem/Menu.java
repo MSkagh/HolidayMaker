@@ -1,10 +1,13 @@
 package menuSystem;
 
+import databaseConnection.Database;
 import menuSystem.menues.Start;
 import java.util.List;
 import java.util.Scanner;
 
 public abstract class Menu implements State {
+
+    protected Database db = new Database();
     protected static final Scanner scanner = new Scanner(System.in);
     protected static List<MenuLine> menuLines;
     protected static String menuTitle;

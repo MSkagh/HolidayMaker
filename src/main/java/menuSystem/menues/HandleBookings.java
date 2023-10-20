@@ -90,8 +90,11 @@ public class HandleBookings {
 
     }
     private void viewPackages(){
-        System.out.println(packageList);
-        choice();
+        for( Package p : packageList){
+            System.out.println(p.getName());
+        }
+
+        //choice();
     }
     }
 
