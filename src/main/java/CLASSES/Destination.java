@@ -1,6 +1,7 @@
 package CLASSES;
 
 public class Destination {
+    private int id;
     private String name;
     private int startDate;
     private int endDate;
@@ -11,6 +12,17 @@ public class Destination {
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
+    }
+    public Destination(int id, String name, int startDate, int endDate, double price) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

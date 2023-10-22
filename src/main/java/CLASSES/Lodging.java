@@ -1,6 +1,7 @@
 package CLASSES;
 
 public class Lodging {
+    private int id;
     private String name;
     private int startDate;
     private int endDate;
@@ -15,6 +16,19 @@ public class Lodging {
         this.pricePerDay = pricePerDay;
         this.capacity = capacity;
         this.location = location;
+    }
+    public Lodging(int id, String name, int startDate, int endDate, double pricePerDay, int capacity, String location) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.pricePerDay = pricePerDay;
+        this.capacity = capacity;
+        this.location = location;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

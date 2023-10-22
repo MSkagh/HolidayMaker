@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="added viewList">
+      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleCustomers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_11_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_11_45__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/ConfirmBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

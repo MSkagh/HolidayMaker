@@ -1,7 +1,6 @@
 package menuSystem.menues;
 
-import CLASSES.ShowConfirmedBookings;
-import databaseConnection.Database;
+
 import menuSystem.Menu;
 import menuSystem.MenuLine;
 
@@ -12,9 +11,11 @@ public class Booking extends Menu {
     public void run() {
         menuTitle = "Bookings menu";
         menuLines = List.of(
-                new MenuLine(1, "Start", () -> Menu.setState(new Start())),
-                new MenuLine(2, "View all packages", () -> Menu.setState(new ViewList()) ),
-                new MenuLine(3, "View bookings", () -> ShowConfirmedBookings.getInstance().showConfirmedBookings()),
+                new MenuLine(1, "Handle Packages", () -> Menu.setState(new HandlePackages()) ),
+                new MenuLine(2, "Handle Destinations", () -> Menu.setState(new HandleDestinations())),
+                new MenuLine(3, "Handle Activities", () -> Menu.setState(new HandleActivities())),
+                new MenuLine(4, "Handle Lodgings", () -> Menu.setState(new HandleLodgings())),
+                new MenuLine(5, "Handle Customers", () -> Menu.setState(new HandleCustomers())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }

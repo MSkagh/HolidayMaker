@@ -1,6 +1,7 @@
 package CLASSES;
 
 public class Activity {
+    private int id;
     private String name;
     private int startDate;
     private int endDate;
@@ -13,7 +14,17 @@ public class Activity {
         this.price = price;
         this.location = location;
     }
-
+    public Activity(int id, String name, int startDate, int endDate, double price, String location) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
+        this.location = location;
+    }
+    public int getId(){
+        return id;
+    }
     public String getName() {
         return name;
     }

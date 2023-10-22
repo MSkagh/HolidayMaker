@@ -127,6 +127,7 @@ public class Database {
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 destinationList.add(new Destination(
+                        resultSet.getInt("ID"),
                         resultSet.getString("Destination -> '$.name'"),
                         resultSet.getInt("Destination -> '$.startDate'"),
                         resultSet.getInt("Destination -> '$.endDate'"),
@@ -154,6 +155,7 @@ public class Database {
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 lodgingList.add(new Lodging(
+                        resultSet.getInt("ID"),
                         resultSet.getString("Lodging -> '$.name'"),
                         resultSet.getInt("Lodging -> '$.startDate'"),
                         resultSet.getInt("Lodging -> '$.endDate'"),
@@ -182,6 +184,7 @@ public class Database {
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 activityList.add(new Activity(
+                        resultSet.getInt("ID"),
                         resultSet.getString("Activity -> '$.name'"),
                         resultSet.getInt("Activity -> '$.startDate'"),
                         resultSet.getInt("Activity -> '$.endDate'"),
