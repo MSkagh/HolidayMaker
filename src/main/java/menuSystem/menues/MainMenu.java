@@ -6,10 +6,10 @@ import menuSystem.MenuLine;
 
 import java.util.List;
 
-public class Booking extends Menu {
+public class MainMenu extends Menu {
     @Override
     public void run() {
-        menuTitle = "Bookings menu";
+        menuTitle = "Main menu";
         menuLines = List.of(
                 new MenuLine(1, "Handle Packages", () -> Menu.setState(new HandlePackages()) ),
                 new MenuLine(2, "Handle Destinations", () -> Menu.setState(new HandleDestinations())),

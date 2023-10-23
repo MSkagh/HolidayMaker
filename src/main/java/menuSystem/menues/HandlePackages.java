@@ -15,6 +15,7 @@ public class HandlePackages extends Menu {
                 new MenuLine(2, "View details of a Package", () -> System.out.println("NOT YET IMPLEMENTED") ),
                 new MenuLine(3, "Change details of a Package", () -> System.out.println("NOT YET IMPLEMENTED")),
                 new MenuLine(4, "Delete a Package from the system", this::deletePackageById),
+                new MenuLine(5, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
