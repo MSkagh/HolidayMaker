@@ -334,7 +334,7 @@ public class Database {
                              "location" : "%s"
                             }
                             ')
-                            """.formatted(name, startDate, endDate,price, location));
+                            """.formatted(name, startDate, endDate, price, location));
             statement.executeUpdate();
             System.out.println("Activity added to the database");
         } catch (Exception ex) { ex.printStackTrace(); }

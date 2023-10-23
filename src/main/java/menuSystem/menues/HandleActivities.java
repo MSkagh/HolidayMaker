@@ -6,6 +6,7 @@ import menuSystem.MenuLine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class HandleActivities extends Menu {
     @Override
@@ -15,9 +16,9 @@ public class HandleActivities extends Menu {
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of an activity by ID", this::viewById),
                 new MenuLine(3, "Change details of an activity by ID", this::updateActivityById),
-                new MenuLine(4, "Add an activity to the system", () -> System.out.println("NOT YET IMPLEMENTED")),
+                new MenuLine(4, "Add an activity to the system", this::addActivity),
                 new MenuLine(5, "Delete an activity from the system", this::deleteActivityById),
-                new MenuLine(6, "Go back", () -> Menu.setState(new Booking())),
+                new MenuLine(6, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
@@ -73,6 +74,28 @@ public class HandleActivities extends Menu {
             String value = scanner.nextLine();
             db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
         }
+
+    }
+
+    private void addActivity() {
+        Scanner activScanner = new Scanner(System.in);
+        System.out.println("Please enter the name of the activity: ");
+        String name = activScanner.nextLine();
+
+        System.out.println("Please enter the location of the activity: ");
+        String location = activScanner.nextLine();
+
+
+        System.out.println("Please enter the start date of the activity: ");
+        int startDate = activScanner.nextInt();
+
+        System.out.println("Please enter the end date of the activity: ");
+        int endDate = activScanner.nextInt();
+
+        System.out.println("Please enter the price of the activity: ");
+        double price = activScanner.nextDouble();
+
+        db.createActivity(name, startDate, endDate, price, location);
 
     }
 

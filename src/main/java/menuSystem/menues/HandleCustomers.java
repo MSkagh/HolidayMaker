@@ -4,7 +4,6 @@ import CLASSES.Customer;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HandleCustomers extends Menu {
@@ -16,7 +15,7 @@ public class HandleCustomers extends Menu {
                 new MenuLine(2, "View details of a Customer", this::viewDetails ),
                 new MenuLine(3, "Delete a Customer from the system", this::deleteCustomerById),
                 new MenuLine(4, "Accept customers payment", this::acceptCustomersPayById),
-                new MenuLine(5, "Go back", () -> Menu.setState(new Booking())),
+                new MenuLine(5, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }

@@ -17,7 +17,7 @@ public class Start extends Menu {
                 |-----*---*------******--*****---****---****---**---------**--******-|
                 +--------------------------------------------------------------------+""";
         menuLines = List.of(
-                new MenuLine(1, "Start", () -> Menu.setState(new Booking())),
+                new MenuLine(1, "Start", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)));
     }
 }

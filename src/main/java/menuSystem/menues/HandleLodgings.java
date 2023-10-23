@@ -6,6 +6,7 @@ import menuSystem.Menu;
 import menuSystem.MenuLine;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class HandleLodgings extends Menu {
     @Override
@@ -15,7 +16,9 @@ public class HandleLodgings extends Menu {
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of a Lodging", this::viewById),
                 new MenuLine(3, "Change details of a Lodging", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Delete a Lodging from the system", this::deleteLodgingById),
+                new MenuLine(4, "Add a Lodging from the system", this::addLodging),
+                new MenuLine(5, "Delete a Lodging from the system", this::deleteLodgingById),
+                new MenuLine(6, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
@@ -50,6 +53,34 @@ public class HandleLodgings extends Menu {
                     %n""", d.getId(), d.getName(),d.getLocation(), d.getPricePerDay(), d.getStartDate(), d.getEndDate());
         }
     }
+
+    private void addLodging() {
+       Scanner testScanner = new Scanner(System.in);
+        System.out.println("Please enter the name of the lodging: ");
+        String name = testScanner.nextLine();
+
+        System.out.println("Please enter the location of the lodging: ");
+        String location = testScanner.nextLine();
+
+        System.out.println("Please enter the start date of the lodging: ");
+        int startDate = testScanner.nextInt();
+
+        System.out.println("Please enter the end date of the lodging: ");
+        int endDate = testScanner.nextInt();
+
+        System.out.println("Please enter the price of the lodging: ");
+        double pricePerDay = testScanner.nextDouble();
+
+        System.out.println("Please enter the capacity of the lodging: ");
+        int capacity = testScanner.nextInt();
+
+
+
+
+        db.createLodging(name, startDate, endDate, pricePerDay, capacity, location);
+
+    }
+
     private void deleteLodgingById(){
         System.out.println("Please enter id: ");
         int selectId = scanner.nextInt();

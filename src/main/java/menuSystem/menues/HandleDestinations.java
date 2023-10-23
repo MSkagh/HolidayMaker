@@ -4,7 +4,9 @@ import CLASSES.Destination;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
 
+import java.sql.SQLOutput;
 import java.util.List;
+import java.util.Scanner;
 
 public class HandleDestinations extends Menu {
     @Override
@@ -13,9 +15,10 @@ public class HandleDestinations extends Menu {
         menuLines = List.of(
                 new MenuLine(1, "View all Destinations", this::viewAll),
                 new MenuLine(2, "View details of a Destination", this::viewById),
-                new MenuLine(3, "Change details of a Destination", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Delete a Destination from the system", this::deleteDestinationById),
-                new MenuLine(5, "Go back", () -> Menu.setState(new Booking())),
+                new MenuLine(3, "Change details of a Destination", () -> System.out.println("NOT IMPLEMENTED YET")),
+                new MenuLine(4, "Add a Destination", this::addDestination),
+                new MenuLine(5, "Delete a Destination from the system", this::deleteDestinationById),
+                new MenuLine(6, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
@@ -50,6 +53,24 @@ public class HandleDestinations extends Menu {
                     +-------------------------------+
                     %n""", d.getId(), d.getName(), d.getPrice(), d.getStartDate(), d.getEndDate());
         }
+    }
+
+    private void addDestination() {
+        Scanner destScanner = new Scanner(System.in);
+        System.out.println("Please enter the name of the destination: ");
+        String name = destScanner.next();
+
+        System.out.println("Please enter the start date of the destination: ");
+        int startDate = destScanner.nextInt();
+
+        System.out.println("Please enter the end date of the destination: ");
+        int endDate = destScanner.nextInt();
+
+        System.out.println("Please enter the price of the destination: ");
+        double price = destScanner.nextDouble();
+
+        db.createDestination(name, startDate, endDate, price);
+
     }
     private void deleteDestinationById(){
         System.out.println("Please enter id: ");
