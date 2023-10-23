@@ -34,7 +34,7 @@ class DatabaseTest {
     void createDestination() {
         int originalSize = db.getAllDestinations().size();
         db.createDestination("Kina", 20231224, 20231230, 15000);
-        db.updateDestinations();
+        db.fetchDestinations();
         Assertions.assertEquals(db.getAllDestinations().size(), originalSize+1);
     }
 
@@ -42,7 +42,7 @@ class DatabaseTest {
     void createLodging() {
         int originalSize = db.getAllLodgings().size();
         db.createLodging("Johnnys Härliga Håla", 20240312, 20240319, 1200, 4, "Kalmar");
-        db.updateLodgings();
+        db.fetchLodgings();
         Assertions.assertEquals(db.getAllLodgings().size(), originalSize+1);
     }
 
@@ -50,7 +50,7 @@ class DatabaseTest {
     void createActivity() {
         int originalSize = db.getAllActivities().size();
         db.createActivity("Search for Sugarman", 20240312, 20240319, 499.99, "Kalmar");
-        db.updateActivities();
+        db.fetchActivities();
         Assertions.assertEquals(db.getAllActivities().size(), originalSize+1);
     }
 
@@ -61,7 +61,7 @@ class DatabaseTest {
         Destination destination = db.getAllDestinations().get(0);
         int originalSize = db.getAllPackages().size();
         db.createPackage("Leta efter en legend med mysiga Johnny i Kalmar", destination,activity,lodging);
-        db.updatePackages();
+        db.fetchPackages();
         Assertions.assertEquals(db.getAllPackages().size(), originalSize+1);
     }
 }

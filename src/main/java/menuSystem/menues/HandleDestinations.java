@@ -14,7 +14,7 @@ public class HandleDestinations extends Menu {
                 new MenuLine(1, "View all Destinations", this::viewAll),
                 new MenuLine(2, "View details of a Destination", this::viewById),
                 new MenuLine(3, "Change details of a Destination", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Delete a Destination from the system", () -> System.out.println("NOT YET IMPLEMENTED")),
+                new MenuLine(4, "Delete a Destination from the system", this::deleteDestinationById),
                 new MenuLine(5, "Go back", () -> Menu.setState(new Booking())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
@@ -50,5 +50,10 @@ public class HandleDestinations extends Menu {
                     +-------------------------------+
                     %n""", d.getId(), d.getName(), d.getPrice(), d.getStartDate(), d.getEndDate());
         }
+    }
+    private void deleteDestinationById(){
+        System.out.println("Please enter id: ");
+        int selectId = scanner.nextInt();
+        db.deleteById(selectId, "Destinations");
     }
 }

@@ -50,13 +50,13 @@ public class Database {
 
     //FUNCTIONS THAT UPDATES THE LISTS
     void updateDatabase(){
-        updatePackages();
-        updateDestinations();
-        updateLodgings();
-        updateActivities();
-        updateCustomers();
+        fetchPackages();
+        fetchDestinations();
+        fetchLodgings();
+        fetchActivities();
+        fetchCustomers();
     }
-    void updatePackages(){
+    void fetchPackages(){
         packageList = new ArrayList<>();
         try {
             statement = conn.prepareStatement("""
@@ -111,7 +111,7 @@ public class Database {
 
         } catch (Exception ex) { ex.printStackTrace(); }
     }
-    void updateDestinations(){
+    void fetchDestinations(){
         destinationList = new ArrayList<>();
         try {
 
@@ -137,7 +137,7 @@ public class Database {
 
         } catch (Exception ex) { ex.printStackTrace(); }
     }
-    void updateLodgings(){
+    void fetchLodgings(){
         lodgingList = new ArrayList<>();
         try {
 
@@ -168,7 +168,7 @@ public class Database {
 
         } catch (Exception ex) { ex.printStackTrace(); }
     }
-    void updateActivities(){
+    void fetchActivities(){
         activityList = new ArrayList<>();
         try {
             statement = conn.prepareStatement("""
@@ -196,7 +196,7 @@ public class Database {
 
         } catch (Exception ex) { ex.printStackTrace(); }
     }
-    void updateCustomers(){
+    void fetchCustomers(){
         customerList = new ArrayList<>();
         try {
             statement = conn.prepareStatement("""
@@ -205,7 +205,8 @@ public class Database {
                         customerName,
                           email,
                           phoneNumber,
-                          packageId
+                          packageId,
+                          isPayed
                       FROM Customers;
                             """);
             resultSet = statement.executeQuery();
@@ -215,13 +216,58 @@ public class Database {
                         resultSet.getString("customerName"),
                         resultSet.getString("email"),
                         resultSet.getString("phoneNumber"),
-                        resultSet.getInt("packageId")
-
+                        resultSet.getInt("packageId"),
+                        resultSet.getBoolean("isPayed")
                 ));
             }
 
         } catch (Exception ex) { ex.printStackTrace(); }
 
+    }
+    // UPDATE FUNCTIONS
+    public void updateById(String table, String column ,int id, String key, List<?> value){
+        var changedValue = value.get(0);
+        System.out.println(changedValue);
+        if(changedValue instanceof String){
+            changedValue = "\'" + changedValue + "\'";
+        }
+        try{
+            statement = conn.prepareStatement("""
+                    UPDATE %s
+                    SET %s = JSON_REPLACE(%s,
+                     '$.%s', %s
+                    )
+                    WHERE ID = %s;
+                    """.formatted(table,column, column, key, changedValue, id));
+                statement.executeUpdate();
+            System.out.println("Activity updated in the database ");
+
+
+        }catch (Exception ex) { ex.printStackTrace(); }
+    }
+    public void updateCustomerById(int id) {
+        try {
+            statement = conn.prepareStatement("""
+                    UPDATE Customers
+                    SET isPayed = true
+                    WHERE id = %s
+                    """.formatted(id));
+            statement.executeUpdate();
+        }catch (Exception ex) { ex.printStackTrace(); }
+    }
+    // DELETE FUNCTIONS
+
+    public void deleteById(int id, String table){
+        try {
+            statement = conn.prepareStatement("""
+                    DELETE FROM %s
+                    WHERE id = %s
+                    """.formatted(table, id));
+
+            statement.executeUpdate();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     // CREATION FUNCTIONS

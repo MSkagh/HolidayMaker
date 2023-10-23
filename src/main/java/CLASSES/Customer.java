@@ -8,12 +8,19 @@ public class Customer {
     private String customerPhoneNumber;
     private int packageId;
 
-    public Customer(int id, String customerName, String customerEmail, String customerPhoneNumber, int packageId) {
+    private boolean isPayed;
+
+    public Customer(int id, String customerName, String customerEmail, String customerPhoneNumber, int packageId, boolean isPayed) {
         this.id = id;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.customerPhoneNumber = customerPhoneNumber;
         this.packageId = packageId;
+        this.isPayed = isPayed;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getCustomerName() {
@@ -22,11 +29,12 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "ConfirmBooking" +
-                "customerName: '" + customerName + '\'' +
-                ", customerEmail: '" + customerEmail + '\'' +
-                ", customerPhoneNumber: '" + customerPhoneNumber + '\'' +
-                ", customerPackage: " + packageId
+        return "Customer: " + '\n' +
+                "customerName: '" + customerName + '\n' +
+                ", customerEmail: '" + customerEmail + '\n' +
+                ", customerPhoneNumber: '" + customerPhoneNumber + '\n' +
+                ", customerPackage: " + packageId + '\n' +
+                ", isPayed: " + isPayed + '\''
                 ;
     }
 }

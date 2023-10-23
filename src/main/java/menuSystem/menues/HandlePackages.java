@@ -14,7 +14,7 @@ public class HandlePackages extends Menu {
                 new MenuLine(1, "View all Packages", this::viewAll),
                 new MenuLine(2, "View details of a Package", () -> System.out.println("NOT YET IMPLEMENTED") ),
                 new MenuLine(3, "Change details of a Package", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Delete a Package from the system", () -> System.out.println("NOT YET IMPLEMENTED")),
+                new MenuLine(4, "Delete a Package from the system", this::deletePackageById),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
@@ -24,5 +24,10 @@ public class HandlePackages extends Menu {
                     ID| %s: ACTIVITY: %s,
                     %n""", p.getId(),p.getName());
         }
+    }
+    private void deletePackageById(){
+        System.out.println("Please enter id: ");
+        int selectId = scanner.nextInt();
+        db.deleteById(selectId, "Packages");
     }
 }

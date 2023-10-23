@@ -15,7 +15,7 @@ public class HandleLodgings extends Menu {
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of a Lodging", this::viewById),
                 new MenuLine(3, "Change details of a Lodging", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Delete a Lodging from the system", () -> System.out.println("NOT YET IMPLEMENTED")),
+                new MenuLine(4, "Delete a Lodging from the system", this::deleteLodgingById),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
@@ -49,5 +49,10 @@ public class HandleLodgings extends Menu {
                     +-------------------------------+
                     %n""", d.getId(), d.getName(),d.getLocation(), d.getPricePerDay(), d.getStartDate(), d.getEndDate());
         }
+    }
+    private void deleteLodgingById(){
+        System.out.println("Please enter id: ");
+        int selectId = scanner.nextInt();
+        db.deleteById(selectId, "Lodgings");
     }
 }
