@@ -5,23 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Added a plethora of menus to navigate the app.&#10;added constructor with int &quot;id&quot; for Lodging, Destination, Activity &#10;added support for id when constructing Lodging, destination and activity -objects in the backend.&#10;added field id for Lodging, Destination, Activity">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/PackageOwner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/ShowConfirmedBookings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Extras.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/TestDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleBookings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/ViewList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +27,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="adding" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,31 +79,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="MenuSystem" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="menuSystem.menues" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -294,5 +295,16 @@
     <MESSAGE value="added viewList" />
     <MESSAGE value="Added a plethora of menus to navigate the app.&#10;added constructor with int &quot;id&quot; for Lodging, Destination, Activity &#10;added support for id when constructing Lodging, destination and activity -objects in the backend.&#10;added field id for Lodging, Destination, Activity" />
     <option name="LAST_COMMIT_MESSAGE" value="Added a plethora of menus to navigate the app.&#10;added constructor with int &quot;id&quot; for Lodging, Destination, Activity &#10;added support for id when constructing Lodging, destination and activity -objects in the backend.&#10;added field id for Lodging, Destination, Activity" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/databaseConnection/Database.java</url>
+          <line>278</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

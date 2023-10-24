@@ -3,10 +3,7 @@ package databaseConnection;
 import CLASSES.*;
 import CLASSES.Package;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +18,7 @@ public class Database {
     private List<Destination> destinationList = new ArrayList<>();
     private List<Activity> activityList = new ArrayList<>();
     private List<Lodging> lodgingList = new ArrayList<>();
-    private List<Customer> customerList = new ArrayList<>();
+    private List<Orders> ordersList = new ArrayList<>();
 
     public Database(){
         connectToDb();
@@ -46,15 +43,15 @@ public class Database {
     public List<Lodging> getAllLodgings(){
         return lodgingList;
     }
-    public List<Customer> getAllCustomer(){ return customerList; }
+    public List<Orders> getAllCustomer(){ return ordersList; }
 
     //FUNCTIONS THAT UPDATES THE LISTS
-    void updateDatabase(){
+   public void updateDatabase(){
         fetchPackages();
         fetchDestinations();
         fetchLodgings();
         fetchActivities();
-        fetchCustomers();
+        fetchOrders();
     }
     void fetchPackages(){
         packageList = new ArrayList<>();
@@ -105,8 +102,8 @@ public class Database {
                                 resultSet.getDouble("lodging -> '$.pricePerDay'"),
                                 resultSet.getInt("lodging -> '$.capacity'"),
                                 resultSet.getString("lodging -> '$.location'")
-                        ),
-                        null));
+                        )
+                        ));
             }
 
         } catch (Exception ex) { ex.printStackTrace(); }
@@ -196,8 +193,8 @@ public class Database {
 
         } catch (Exception ex) { ex.printStackTrace(); }
     }
-    void fetchCustomers(){
-        customerList = new ArrayList<>();
+    void fetchOrders(){
+        ordersList = new ArrayList<>();
         try {
             statement = conn.prepareStatement("""
                     SELECT\s
@@ -206,23 +203,44 @@ public class Database {
                           email,
                           phoneNumber,
                           packageId,
-                          isPayed
-                      FROM Customers;
+                          isPayed,
+                          extra
+                      FROM Orders;
                             """);
             resultSet = statement.executeQuery();
             while (resultSet.next()){
-                customerList.add(new Customer(
+                List<Package> filteredList = getAllPackages().stream().filter(p -> {
+                    try {
+                        return p.getId() == resultSet.getInt("packageId");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }).toList();
+if (filteredList.size()>0){
+                ordersList.add(new Orders(
                         resultSet.getInt("id"),
                         resultSet.getString("customerName"),
                         resultSet.getString("email"),
                         resultSet.getString("phoneNumber"),
-                        resultSet.getInt("packageId"),
-                        resultSet.getBoolean("isPayed")
+                        resultSet.getBoolean("isPayed"),
+                        filteredList.get(0),
+                        resultSet.getString("extra")
                 ));
             }
-
-        } catch (Exception ex) { ex.printStackTrace(); }
-
+            else {
+                ordersList.add(new Orders(
+                        resultSet.getInt("id"),
+                        resultSet.getString("customerName"),
+                        resultSet.getString("email"),
+                        resultSet.getString("phoneNumber"),
+                        resultSet.getBoolean("isPayed"),
+                        new Package(),
+                        resultSet.getString("extra")));
+            }
+        }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     // UPDATE FUNCTIONS
     public void updateById(String table, String column ,int id, String key, List<?> value){
@@ -240,15 +258,15 @@ public class Database {
                     WHERE ID = %s;
                     """.formatted(table,column, column, key, changedValue, id));
                 statement.executeUpdate();
-            System.out.println("Activity updated in the database ");
+            System.out.printf("%s updated in the database \n", column);
 
 
         }catch (Exception ex) { ex.printStackTrace(); }
     }
-    public void updateCustomerById(int id) {
+    public void updateOrderById(int id) {
         try {
             statement = conn.prepareStatement("""
-                    UPDATE Customers
+                    UPDATE Orders
                     SET isPayed = true
                     WHERE id = %s
                     """.formatted(id));
@@ -271,6 +289,24 @@ public class Database {
     }
 
     // CREATION FUNCTIONS
+    public void createOrder(String name, String email, String phoneNumber, int packageId, String extra){
+        try {
+            statement = conn.prepareStatement("""
+                    
+                          INSERT INTO Orders (customerName, email, phoneNumber, packageId, extra)  VALUES (
+                          
+                               '%s',
+                               '%s',
+                               '%s',
+                                %s,
+                               '%s'
+                               
+                          )
+                    """.formatted(name, email, phoneNumber, packageId, extra));
+            statement.executeUpdate();
+        }catch (Exception ex){ex.printStackTrace();}
+    }
+
     public void createDestination(String name, int startDate, int endDate, double price){
         //Converting the date of today into an int
         String nowDateString = LocalDate.now().toString();

@@ -5,6 +5,7 @@ import menuSystem.Menu;
 import menuSystem.MenuLine;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class HandleDestinations extends Menu {
         menuLines = List.of(
                 new MenuLine(1, "View all Destinations", this::viewAll),
                 new MenuLine(2, "View details of a Destination", this::viewById),
-                new MenuLine(3, "Change details of a Destination", () -> System.out.println("NOT IMPLEMENTED YET")),
+                new MenuLine(3, "Change details of a Destination", this::updateDestinationById),
                 new MenuLine(4, "Add a Destination", this::addDestination),
                 new MenuLine(5, "Delete a Destination from the system", this::deleteDestinationById),
                 new MenuLine(6, "Go back", () -> Menu.setState(new MainMenu())),
@@ -53,6 +54,39 @@ public class HandleDestinations extends Menu {
                     +-------------------------------+
                     %n""", d.getId(), d.getName(), d.getPrice(), d.getStartDate(), d.getEndDate());
         }
+    }
+
+    private void updateDestinationById(){
+        System.out.println("Please enter id: ");
+        int selectId = scanner.nextInt();
+        System.out.println("""
+                What would you like to change?
+                name | price | startDate | endDate
+                 """);
+        String key = scanner.next();
+
+        System.out.println(key);
+
+
+        System.out.println("Please enter value: ");
+        if(key.equals("price")){
+            double value = scanner.nextDouble();
+            System.out.println(value);
+
+            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+        }else if(key.equals("startDate") || key.equals("endDate")){
+            int value = scanner.nextInt();
+            System.out.println(value);
+
+            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+        }else{
+            scanner = new Scanner(System.in);
+            String value = scanner.nextLine();
+            System.out.println(value);
+
+            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+        }
+
     }
 
     private void addDestination() {

@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public abstract class Menu implements State {
 
-    protected Database db = new Database();
-    protected static final Scanner scanner = new Scanner(System.in);
+    protected static Database db = new Database();
+    protected static Scanner scanner = new Scanner(System.in);
     protected static List<MenuLine> menuLines;
     protected static String menuTitle;
     private static State state = new Start();
@@ -21,6 +21,7 @@ public abstract class Menu implements State {
     public static void start() {
 
         state.run();
+        Menu.db.updateDatabase();
         show();
         int choice = scanner.nextInt();
         menuLines.forEach(menuLine -> {

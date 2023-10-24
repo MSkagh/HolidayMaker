@@ -61,17 +61,27 @@ public class HandleActivities extends Menu {
                 What would you like to change?
                 name | price | startDate | endDate | location 
                  """);
-        String key = scanner.nextLine();
-        scanner.next();
+        String key = scanner.next();
+
+        System.out.println(key);
+
+
         System.out.println("Please enter value: ");
         if(key.equals("price")){
             double value = scanner.nextDouble();
+            System.out.println(value);
+
             db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
         }else if(key.equals("startDate") || key.equals("endDate")){
              int value = scanner.nextInt();
+             System.out.println(value);
+
             db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
         }else{
+            scanner = new Scanner(System.in);
             String value = scanner.nextLine();
+            System.out.println(value);
+
             db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
         }
 
