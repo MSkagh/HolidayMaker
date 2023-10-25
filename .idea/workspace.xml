@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Removed bloat and refactored a little bit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-18_11_21__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +317,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/databaseConnection/Database.java</url>
-          <line>278</line>
+          <line>277</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
