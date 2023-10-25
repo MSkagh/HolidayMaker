@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class HandleActivities extends Menu {
     @Override
     public void run() {
-        menuTitle = "Here you can handle all Activities currently in the system";
+        menuTitle = "<-Here you can handle all Activities currently in the system->";
         menuLines = List.of(
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of an activity by ID", this::viewById),
@@ -23,35 +23,16 @@ public class HandleActivities extends Menu {
         ;
     }
     private void viewAll(){
+        System.out.println(" ");
         for (Activity a : db.getAllActivities()) {
-            System.out.printf("""
-                                ID| %s: ACTIVITY: %s,
-                                %n""", a.getId(), a.getName());
+            a.displayShortInfo();
         }
+        System.out.println(" ");
     }
     private void viewById(){
         System.out.println("Please enter ID of desired activity to view");
-        int id = scanner.nextInt();
-        List<Activity> aList = db.getAllActivities()
-                .stream()
-                .filter(activity -> activity.getId() == id)
-                .toList();
-
-        if(aList.size()<1){
-            System.out.println("That id does not match anything in the database, please try again");
-        }else {
-            Activity a = aList.get(0);
-            System.out.printf("""
-                    +-------------------------------+
-                    |Id: %s
-                    |Name: %s
-                    |Available at: %s
-                    |Cost: %s kr
-                    |Start at: %s
-                    |Ends at: %s
-                    +-------------------------------+
-                    %n""", a.getId(),a.getName(),a.getLocation(),a.getPrice(),a.getStartDate(),a.getEndDate());
-        }
+        int selectId = scanner.nextInt();
+        db.getAllActivities().stream().filter(customer -> customer.getId() == selectId).forEach(Activity::displayLongInfo);
 
     }
     private void updateActivityById(){
@@ -59,7 +40,7 @@ public class HandleActivities extends Menu {
         int selectId = scanner.nextInt();
         System.out.println("""
                 What would you like to change?
-                name | price | startDate | endDate | location 
+                name | price | startDate | endDate | location
                  """);
         String key = scanner.next();
 

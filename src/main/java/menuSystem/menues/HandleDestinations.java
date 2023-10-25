@@ -1,5 +1,6 @@
 package menuSystem.menues;
 
+import CLASSES.Activity;
 import CLASSES.Destination;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
@@ -25,35 +26,17 @@ public class HandleDestinations extends Menu {
     }
 
     private void viewAll() {
+        System.out.println("");
         for (Destination d : db.getAllDestinations()) {
-            System.out.printf("""
-                    ID| %s: DESTINATION: %s,
-                    %n""", d.getId(), d.getName());
+            d.displayShortInfo();
         }
+        System.out.println("");
     }
 
     private void viewById() {
-        System.out.println("Please enter ID of desired activity to view");
-        int id = scanner.nextInt();
-        List<Destination> aList = db.getAllDestinations()
-                .stream()
-                .filter(activity -> activity.getId() == id)
-                .toList();
-
-        if (aList.size() < 1) {
-            System.out.println("That id does not match anything in the database, please try again");
-        } else {
-            Destination d = aList.get(0);
-            System.out.printf("""
-                    +-------------------------------+
-                    |Id: %s
-                    |Name: %s
-                    |Cost: %s kr
-                    |Start at: %s
-                    |Ends at: %s
-                    +-------------------------------+
-                    %n""", d.getId(), d.getName(), d.getPrice(), d.getStartDate(), d.getEndDate());
-        }
+        System.out.println("Please enter ID of the desired destination to view");
+        int selectId = scanner.nextInt();
+        db.getAllDestinations().stream().filter(customer -> customer.getId() == selectId).forEach(Destination::displayLongInfo);
     }
 
     private void updateDestinationById(){
@@ -65,25 +48,19 @@ public class HandleDestinations extends Menu {
                  """);
         String key = scanner.next();
 
-        System.out.println(key);
+
 
 
         System.out.println("Please enter value: ");
         if(key.equals("price")){
             double value = scanner.nextDouble();
-            System.out.println(value);
-
             db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
         }else if(key.equals("startDate") || key.equals("endDate")){
             int value = scanner.nextInt();
-            System.out.println(value);
-
             db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
         }else{
             scanner = new Scanner(System.in);
             String value = scanner.nextLine();
-            System.out.println(value);
-
             db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
         }
 

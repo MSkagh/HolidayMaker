@@ -1,16 +1,15 @@
 package CLASSES;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Package {
    private Destination destination;
    private Activity activity;
    private Lodging lodging;
-
    private double totalPrice;
    private int id;
    private String name;
+   /*------------------------------------------------------------------
+     ------------------------------CONSTRUCTOR-------------------------
+     ------------------------------------------------------------------*/
    public Package(int id, String name, Destination destination, Activity activity, Lodging lodging) {
       this.id = id;
       this.name = name;
@@ -22,18 +21,30 @@ public class Package {
       setTotalPrice();
    }
 public Package(){}
+   /*------------------------------------------------------------------
+     ------------------------------GETTERS-----------------------------
+     ------------------------------------------------------------------*/
    public String getName() {
       return name;
    }
-
    public Destination getDestination() {
       return destination;
    }
-
+   public Activity getActivity() {
+      return activity;
+   }
+   public Lodging getLodging() {
+      return lodging;
+   }
    public double getTotalPrice() {
       return totalPrice;
    }
-
+   public int getId() {
+      return id;
+   }
+   /*------------------------------------------------------------------
+     ------------------------------MISC--------------------------------
+     ------------------------------------------------------------------*/
    public void setTotalPrice() {
       double activityCost = 0;
       activityCost += activity.getPrice();
@@ -43,9 +54,22 @@ public Package(){}
       activityCost += destination.getPrice();
       this.totalPrice = activityCost;
    }
-
-   public int getId() {
-      return id;
+   public void displayShortInfo(){
+      System.out.printf("""
+                ID| %s | %s
+                """, id,name);
+   }
+   public void displayLongInfo(){
+      System.out.printf("""
+                ID| %s | %s
+                Destination: %s
+                Activity: %s
+                Lodging: %s
+                Cost: %s
+                Departure date: %s
+                Return date: %s
+                
+                """, id,name, destination.getName(), activity.getName(), lodging.getName(), totalPrice, destination.getStartDate(), destination.getEndDate());
    }
 
    @Override

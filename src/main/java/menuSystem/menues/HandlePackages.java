@@ -17,22 +17,25 @@ public class HandlePackages extends Menu {
         menuTitle = "Here you can handle all Packages currently in the system";
         menuLines = List.of(
                 new MenuLine(1, "View all Packages", HandlePackages::viewAll),
-                new MenuLine(2, "View details of a Package", () -> System.out.println("NOT YET IMPLEMENTED") ),
-                new MenuLine(3, "Change details of a Package", () -> System.out.println("NOT YET IMPLEMENTED")),
-                new MenuLine(4, "Add a Package", this::addPackage),
-                new MenuLine(5, "Delete a Package from the system", this::deletePackageById),
-                new MenuLine(6, "Go back", () -> Menu.setState(new MainMenu())),
+                new MenuLine(2, "View details of a Package", this::viewById),
+                new MenuLine(3, "Add a Package", this::addPackage),
+                new MenuLine(4, "Delete a Package from the system", this::deletePackageById),
+                new MenuLine(5, "Go back", () -> Menu.setState(new MainMenu())),
                 new MenuLine(0, "Exit program", () -> System.exit(0)))
         ;
     }
     public static void viewAll(){
+        System.out.println("");
         for (Package p : db.getAllPackages()){
-            System.out.printf("""
-                    ID| %s: ACTIVITY: %s,
-                    %n""", p.getId(),p.getName());
+            p.displayShortInfo();
         }
+        System.out.println("");
     }
-
+    private void viewById(){
+        System.out.println("Please enter ID of desired activity to view");
+        int selectId = scanner.nextInt();
+        db.getAllPackages().stream().filter(customer -> customer.getId() == selectId).forEach(Package::displayLongInfo);
+    }
     public void addPackage (){
         System.out.println("What will the package be named:");
         scanner = new Scanner(System.in);

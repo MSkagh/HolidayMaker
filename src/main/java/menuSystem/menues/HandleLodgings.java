@@ -1,5 +1,6 @@
 package menuSystem.menues;
 
+import CLASSES.Activity;
 import CLASSES.Destination;
 import CLASSES.Lodging;
 import menuSystem.Menu;
@@ -24,35 +25,16 @@ public class HandleLodgings extends Menu {
         ;
     }
     private void viewAll(){
+        System.out.println("");
         for (Lodging l : db.getAllLodgings()){
-            System.out.printf("""
-                    ID| %s: ACTIVITY: %s,
-                    %n""", l.getId(),l.getName());
+          l.displayShortInfo();
         }
+        System.out.println("");
     }
     private void viewById() {
         System.out.println("Please enter ID of desired activity to view");
-        int id = scanner.nextInt();
-        List<Lodging> aList = db.getAllLodgings()
-                .stream()
-                .filter(activity -> activity.getId() == id)
-                .toList();
-
-        if (aList.size() < 1) {
-            System.out.println("That id does not match anything in the database, please try again");
-        } else {
-            Lodging d = aList.get(0);
-            System.out.printf("""
-                    +-------------------------------+
-                    |Id: %s
-                    |Name: %s
-                    |Located in: %s
-                    |Cost per day: %s kr
-                    |Available from: %s
-                    |Until: %s
-                    +-------------------------------+
-                    %n""", d.getId(), d.getName(),d.getLocation(), d.getPricePerDay(), d.getStartDate(), d.getEndDate());
-        }
+        int selectId = scanner.nextInt();
+        db.getAllLodgings().stream().filter(customer -> customer.getId() == selectId).forEach(Lodging::displayLongInfo);
     }
 
     private void updateLodgingById(){

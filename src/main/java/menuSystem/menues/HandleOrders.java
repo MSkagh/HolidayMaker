@@ -22,26 +22,14 @@ public class HandleOrders extends Menu {
         ;
     }
     private void viewAll(){
-        for (Orders c : db.getAllCustomer()){
-            System.out.printf("""
-                                ----------------------------------
-                                ID: %s
-                                Name of custard: %s
-                                Cost of order: %s
-                                Is Payed: %s
-                                Pakchoi: %s
-                                Extras: %s
-                                ----------------------------------
-                              """, c.getId(), c.getCustomerName(),c.getPoop().getTotalPrice(), c.isPayed(),c.getPoop().getName(), c.getExtra());
-        }
+        System.out.println("");
+        db.getAllCustomer().forEach(Orders::displayShortInfo);
+        System.out.println("");
     }
     private void viewDetails(){
         System.out.println("Select the customers id");
         int selectId = scanner.nextInt();
-        List<Orders> tempList = db.getAllCustomer();
-
-        tempList.stream().filter(customer -> customer.getId() == selectId)
-                .forEach(System.out::println);
+        db.getAllCustomer().stream().filter(customer -> customer.getId() == selectId).forEach(Orders::displayLongInfo);
     }
 
     private void addOrder() {

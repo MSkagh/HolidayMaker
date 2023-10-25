@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Added a plethora of menus to navigate the app.&#10;added constructor with int &quot;id&quot; for Lodging, Destination, Activity &#10;added support for id when constructing Lodging, destination and activity -objects in the backend.&#10;added field id for Lodging, Destination, Activity">
+      <change afterPath="$PROJECT_DIR$/src/test/java/databaseConnection/martinTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-10-17_14_11__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Extras.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Lodging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/databaseConnection/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/MainMenu.java" afterDir="false" />
     </list>

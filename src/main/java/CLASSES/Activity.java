@@ -2,11 +2,14 @@ package CLASSES;
 
 public class Activity {
     private int id;
-    private String name;
-    private int startDate;
-    private int endDate;
-    private double price;
-    private String location;
+    private final String name;
+    private final int startDate;
+    private final int endDate;
+    private final double price;
+    private final String location;
+    /*-----------------------------------------------------------------
+    ------------------------------Constructors-------------------------
+    ------------------------------------------------------------------*/
     public Activity(String name, int startDate, int endDate, double price, String location) {
         this.name = name;
         this.startDate = startDate;
@@ -22,49 +25,40 @@ public class Activity {
         this.price = price;
         this.location = location;
     }
+    /*-----------------------------------------------------------------
+    ------------------------------GETTERS------------------------------
+    ------------------------------------------------------------------*/
     public int getId(){
         return id;
     }
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(int startDate) {
-        this.startDate = startDate;
-    }
-
-    public int getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(int endDate) {
-        this.endDate = endDate;
-    }
-
-    public double getPrice() {
+     public double getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getLocation() {
         return location;
     }
-
-    public void setLocation(String location) {
-        this.location = location;
+    /*-----------------------------------------------------------------
+    ------------------------------MISC---------------------------------
+    ------------------------------------------------------------------*/
+    public void displayShortInfo(){
+        System.out.printf("""
+                ID| %s | %s
+                """, id,name);
     }
-
+    public void displayLongInfo(){
+        System.out.printf("""
+                   ID| %s | %s
+                   --------------------------------
+                   Starts at: %s
+                   Ends at: %s
+                   Cost: %s
+                   Available at: %s
+                   --------------------------------
+                """ ,id, name, startDate,endDate, price, location);
+    }
     @Override
     public String toString() {
         return """
@@ -74,6 +68,6 @@ public class Activity {
                 "price": %s,
                 "location": %s
                 }
-                """.formatted(name,startDate,endDate,price,location);
+                """.formatted(name,startDate,endDate,price, location);
     }
 }

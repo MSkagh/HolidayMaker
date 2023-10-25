@@ -2,13 +2,15 @@ package CLASSES;
 
 public class Lodging {
     private int id;
-    private String name;
-    private int startDate;
-    private int endDate;
-    private double pricePerDay;
-    private int capacity;
-    private String location;
-
+    private final String name;
+    private final int startDate;
+    private final int endDate;
+    private final double pricePerDay;
+    private final int capacity;
+    private final String location;
+    /*------------------------------------------------------------------
+      ------------------------------CONSTRUCTOR-------------------------
+      ------------------------------------------------------------------*/
     public Lodging(String name, int startDate, int endDate, double pricePerDay, int capacity, String location) {
         this.name = name;
         this.startDate = startDate;
@@ -26,59 +28,47 @@ public class Lodging {
         this.capacity = capacity;
         this.location = location;
     }
-
+    /*------------------------------------------------------------------
+      ------------------------------GETTERS-----------------------------
+      ------------------------------------------------------------------*/
     public int getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getStartDate() {
         return startDate;
     }
-
-    public void setStartDate(int startDate) {
-        this.startDate = startDate;
-    }
-
     public int getEndDate() {
         return endDate;
     }
-
-    public void setEndDate(int endDate) {
-        this.endDate = endDate;
-    }
-
     public double getPricePerDay() {
         return pricePerDay;
     }
-
-    public void setPricePerDay(int pricePerDay) {
-        this.pricePerDay = pricePerDay;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    /*-----------------------------------------------------------------
+      ------------------------------Misc-------------------------------
+      -----------------------------------------------------------------*/
+    public void displayShortInfo(){
+        System.out.printf("""
+                ID| %s | %s
+                """, id,name);
     }
-
+    public void displayLongInfo(){
+        System.out.printf("""
+                   ID| %s | %s
+                   --------------------------------
+                   Starts at: %s
+                   Ends at: %s
+                   Cost per day: %s
+                   Can house up to %s custards
+                   --------------------------------
+                """ ,id, name, startDate,endDate, pricePerDay, capacity);
+    }
     @Override
     public String toString() {
         return  """
