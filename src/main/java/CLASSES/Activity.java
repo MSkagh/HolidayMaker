@@ -57,6 +57,7 @@ public class Activity {
                    Cost: %s
                    Available at: %s
                    --------------------------------
+                   
                 """ ,id, name, startDate,endDate, price, location);
     }
     @Override

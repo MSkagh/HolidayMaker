@@ -67,6 +67,7 @@ public class Lodging {
                    Cost per day: %s
                    Can house up to %s custards
                    --------------------------------
+                   
                 """ ,id, name, startDate,endDate, pricePerDay, capacity);
     }
     @Override

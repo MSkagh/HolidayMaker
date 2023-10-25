@@ -56,6 +56,7 @@ public class Destination {
                    Ends at: %s
                    Cost: %s
                    --------------------------------
+                   
                 """ ,id, name, startDate,endDate, price);
     }
 
