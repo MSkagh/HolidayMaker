@@ -1,11 +1,8 @@
 package menuSystem.menues;
 
-import CLASSES.Activity;
-import CLASSES.Destination;
 import CLASSES.Lodging;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,11 +22,11 @@ public class HandleLodgings extends Menu {
         ;
     }
     private void viewAll(){
-        System.out.println("");
+        System.out.println();
         for (Lodging l : db.getAllLodgings()){
           l.displayShortInfo();
         }
-        System.out.println("");
+        System.out.println();
     }
     private void viewById() {
         System.out.println("Please enter ID of desired activity to view");

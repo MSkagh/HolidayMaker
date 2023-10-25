@@ -1,11 +1,9 @@
 package menuSystem.menues;
 
-import CLASSES.Activity;
+
 import CLASSES.Destination;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,11 +24,11 @@ public class HandleDestinations extends Menu {
     }
 
     private void viewAll() {
-        System.out.println("");
+        System.out.println();
         for (Destination d : db.getAllDestinations()) {
             d.displayShortInfo();
         }
-        System.out.println("");
+        System.out.println();
     }
 
     private void viewById() {

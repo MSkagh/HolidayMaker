@@ -36,9 +36,7 @@ public Package(){}
    public Lodging getLodging() {
       return lodging;
    }
-   public double getTotalPrice() {
-      return totalPrice;
-   }
+
    public int getId() {
       return id;
    }

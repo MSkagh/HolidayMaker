@@ -6,7 +6,6 @@ import CLASSES.Lodging;
 import CLASSES.Package;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -25,11 +24,11 @@ public class HandlePackages extends Menu {
         ;
     }
     public static void viewAll(){
-        System.out.println("");
+        System.out.println();
         for (Package p : db.getAllPackages()){
             p.displayShortInfo();
         }
-        System.out.println("");
+        System.out.println();
     }
     private void viewById(){
         System.out.println("Please enter ID of desired activity to view");

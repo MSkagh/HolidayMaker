@@ -3,7 +3,6 @@ package menuSystem.menues;
 import CLASSES.Orders;
 import menuSystem.Menu;
 import menuSystem.MenuLine;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,9 +21,9 @@ public class HandleOrders extends Menu {
         ;
     }
     private void viewAll(){
-        System.out.println("");
+        System.out.println();
         db.getAllCustomer().forEach(Orders::displayShortInfo);
-        System.out.println("");
+        System.out.println();
     }
     private void viewDetails(){
         System.out.println("Select the customers id");
