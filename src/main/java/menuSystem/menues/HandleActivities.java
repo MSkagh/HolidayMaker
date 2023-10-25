@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class HandleActivities extends Menu {
     @Override
     public void run() {
-        menuTitle = "<-Here you can handle all Activities currently in the system->";
+        menuTitle = "<--Here you can handle all Activities currently in the system-->";
         menuLines = List.of(
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of an activity by ID", this::viewById),
@@ -40,32 +40,25 @@ public class HandleActivities extends Menu {
         int selectId = scanner.nextInt();
         System.out.println("""
                 What would you like to change?
-                name | price | startDate | endDate | location
-                 """);
+                name | price | startDate | endDate | location""");
         String key = scanner.next();
-
-        System.out.println(key);
-
-
-        System.out.println("Please enter value: ");
-        if(key.equals("price")){
-            double value = scanner.nextDouble();
-            System.out.println(value);
-
-            db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
-        }else if(key.equals("startDate") || key.equals("endDate")){
-             int value = scanner.nextInt();
-             System.out.println(value);
-
-            db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
-        }else{
-            scanner = new Scanner(System.in);
-            String value = scanner.nextLine();
-            System.out.println(value);
-
-            db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
+        System.out.println("Please enter value:");
+        switch (key) {
+            case "price" -> {
+                double value = scanner.nextDouble();
+                db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "startDate", "endDate" -> {
+                int value = scanner.nextInt();
+                db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "name", "location" -> {
+                scanner = new Scanner(System.in);
+                String value = scanner.nextLine();
+                db.updateById("Activities", "Activity", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            default -> System.out.println("No such value");
         }
-
     }
 
     private void addActivity() {
@@ -75,7 +68,6 @@ public class HandleActivities extends Menu {
 
         System.out.println("Please enter the location of the activity: ");
         String location = activScanner.nextLine();
-
 
         System.out.println("Please enter the start date of the activity: ");
         int startDate = activScanner.nextInt();

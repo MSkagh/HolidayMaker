@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class HandleOrders extends Menu {
     @Override
     public void run() {
-        menuTitle = "Here you can handle all Orders  currently in the system";
+        menuTitle = "<--Here you can handle all Orders  currently in the system-->";
         menuLines = List.of(
                 new MenuLine(1, "View all Orders", this::viewAll),
                 new MenuLine(2, "View details of a Order", this::viewDetails ),

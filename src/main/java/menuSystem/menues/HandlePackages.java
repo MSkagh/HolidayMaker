@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class HandlePackages extends Menu {
     @Override
     public void run() {
-        menuTitle = "Here you can handle all Packages currently in the system";
+        menuTitle = "<--Here you can handle all Packages currently in the system-->";
         menuLines = List.of(
                 new MenuLine(1, "View all Packages", HandlePackages::viewAll),
                 new MenuLine(2, "View details of a Package", this::viewById),

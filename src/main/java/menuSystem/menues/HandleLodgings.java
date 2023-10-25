@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class HandleLodgings extends Menu {
     @Override
     public void run() {
-        menuTitle = "Here you can handle all Lodgings currently in the system";
+        menuTitle = "<--Here you can handle all Lodgings currently in the system-->";
         menuLines = List.of(
                 new MenuLine(1, "View all Activities", this::viewAll),
                 new MenuLine(2, "View details of a Lodging", this::viewById),
@@ -42,29 +42,23 @@ public class HandleLodgings extends Menu {
                 name | pricePerDay | startDate | endDate | location | capacity
                  """);
         String key = scanner.next();
-
-        System.out.println(key);
-
-
         System.out.println("Please enter value: ");
-        if(key.equals("pricePerDay")){
-            double value = scanner.nextDouble();
-            System.out.println(value);
-
-            db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
-        }else if(key.equals("startDate") || key.equals("endDate") || key.equals("capacity")) {
-            int value = scanner.nextInt();
-            System.out.println(value);
-
-            db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
-        }else{
-            scanner = new Scanner(System.in);
-            String value = scanner.nextLine();
-            System.out.println(value);
-
-            db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
+        switch (key) {
+            case "pricePerDay" -> {
+                double value = scanner.nextDouble();
+                db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "startDate", "endDate", "capacity" -> {
+                int value = scanner.nextInt();
+                db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "name", "location" -> {
+                scanner = new Scanner(System.in);
+                String value = scanner.nextLine();
+                db.updateById("Lodgings", "Lodging", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            default -> System.out.println("No such value");
         }
-
     }
 
     private void addLodging() {

@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class HandleDestinations extends Menu {
     @Override
     public void run() {
-        menuTitle = "Here you can handle all Destinations currently in the system";
+        menuTitle = "<--Here you can handle all Destinations currently in the system-->";
         menuLines = List.of(
                 new MenuLine(1, "View all Destinations", this::viewAll),
                 new MenuLine(2, "View details of a Destination", this::viewById),
@@ -45,21 +45,22 @@ public class HandleDestinations extends Menu {
                 name | price | startDate | endDate
                  """);
         String key = scanner.next();
-
-
-
-
         System.out.println("Please enter value: ");
-        if(key.equals("price")){
-            double value = scanner.nextDouble();
-            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
-        }else if(key.equals("startDate") || key.equals("endDate")){
-            int value = scanner.nextInt();
-            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
-        }else{
-            scanner = new Scanner(System.in);
-            String value = scanner.nextLine();
-            db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+        switch (key) {
+            case "price" -> {
+                double value = scanner.nextDouble();
+                db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "startDate", "endDate" -> {
+                int value = scanner.nextInt();
+                db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            case "name" -> {
+                scanner = new Scanner(System.in);
+                String value = scanner.nextLine();
+                db.updateById("Destinations", "Destination", selectId, key, new ArrayList<>(List.of(value)));
+            }
+            default -> System.out.println("No such value");
         }
 
     }

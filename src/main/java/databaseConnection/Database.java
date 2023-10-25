@@ -245,7 +245,6 @@ if (filteredList.size()>0){
     // UPDATE FUNCTIONS
     public void updateById(String table, String column ,int id, String key, List<?> value){
         var changedValue = value.get(0);
-        System.out.println(changedValue);
         if(changedValue instanceof String){
             changedValue = "\'" + changedValue + "\'";
         }
@@ -316,12 +315,11 @@ if (filteredList.size()>0){
         //NULLCHECKING THE NAME
         if (name == null ||name.equals("")){
             System.out.println("Please provide a name for the destination");
-            return;
         }
         //CHECKING
         else if(startDate < now || startDate > endDate){
             System.out.println("The dates are illogical, either the start is before today or the end is before the start");
-            return;}
+        }
         else{
             try {
                 statement = conn.prepareStatement("""

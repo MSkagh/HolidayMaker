@@ -9,7 +9,7 @@ import java.util.List;
 public class MainMenu extends Menu {
     @Override
     public void run() {
-        menuTitle = "Main menu";
+        menuTitle = "<--Main menu-->";
         menuLines = List.of(
                 new MenuLine(1, "Handle Orders", () -> Menu.setState(new HandleOrders())),
                 new MenuLine(2, "Handle Packages", () -> Menu.setState(new HandlePackages()) ),

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Added space for comfort">
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASSES/Package.java" afterDir="false" />
+    <list default="true" id="203a3370-6a3a-40d5-897a-0abedaec624f" name="Changes" comment="Removed bloat and refactored a little bit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleActivities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleDestinations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleLodgings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandleOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menuSystem/menues/HandlePackages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698226362254</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Removed bloat and refactored a little bit">
+      <created>1698226496085</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698226496085</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +309,8 @@
     <MESSAGE value="Added a plethora of menus to navigate the app.&#10;added constructor with int &quot;id&quot; for Lodging, Destination, Activity &#10;added support for id when constructing Lodging, destination and activity -objects in the backend.&#10;added field id for Lodging, Destination, Activity" />
     <MESSAGE value="Polished the turd&#10;Added som stuff to be displayed&#10;Removed some other stuff&#10;Added a few comments" />
     <MESSAGE value="Added space for comfort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added space for comfort" />
+    <MESSAGE value="Removed bloat and refactored a little bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed bloat and refactored a little bit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
