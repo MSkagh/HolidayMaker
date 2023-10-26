@@ -1,5 +1,9 @@
 package CLASSES;
 
+import util.Parser;
+
+import java.time.LocalDate;
+
 public class Lodging {
     private int id;
     private final String name;
@@ -59,6 +63,8 @@ public class Lodging {
                 """, id,name);
     }
     public void displayLongInfo(){
+        LocalDate startDateParser = Parser.intParseToDate(startDate);
+        LocalDate endDateParser = Parser.intParseToDate(endDate);
         System.out.printf("""
                    ID| %s | %s
                    --------------------------------
@@ -68,7 +74,7 @@ public class Lodging {
                    Can house up to %s custards
                    --------------------------------
                    
-                """ ,id, name, startDate,endDate, pricePerDay, capacity);
+                """ ,id, name, startDateParser,endDateParser, pricePerDay, capacity);
     }
     @Override
     public String toString() {

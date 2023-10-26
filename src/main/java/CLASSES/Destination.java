@@ -1,5 +1,13 @@
 package CLASSES;
 
+import util.Parser;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Locale;
+
 public class Destination {
     private int id;
     private final String name;
@@ -48,17 +56,22 @@ public class Destination {
                 ID| %s | %s
                 """, id,name);
     }
-    public void displayLongInfo(){
-        System.out.printf("""
-                   ID| %s | %s
-                   --------------------------------
-                   Starts at: %s
-                   Ends at: %s
-                   Cost: %s
-                   --------------------------------
-                   
-                """ ,id, name, startDate,endDate, price);
+    public void displayLongInfo() {
+            LocalDate startDateParser = Parser.intParseToDate(startDate);
+            LocalDate endDateParser = Parser.intParseToDate(endDate);
+            System.out.printf("""
+                       ID| %s | %s
+                       --------------------------------
+                       Starts at: %s
+                       Ends at: %s
+                       Cost: %s
+                       --------------------------------
+                       
+                    """, id, name, startDateParser, endDateParser, price);
+
     }
+
+
 
     @Override
     public String toString() {

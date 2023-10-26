@@ -1,5 +1,9 @@
 package CLASSES;
 
+import util.Parser;
+
+import java.time.LocalDate;
+
 public class Activity {
     private int id;
     private final String name;
@@ -49,6 +53,8 @@ public class Activity {
                 """, id,name);
     }
     public void displayLongInfo(){
+        LocalDate startDateParser = Parser.intParseToDate(startDate);
+        LocalDate endDateParser = Parser.intParseToDate(endDate);
         System.out.printf("""
                    ID| %s | %s
                    --------------------------------
@@ -58,7 +64,7 @@ public class Activity {
                    Available at: %s
                    --------------------------------
                    
-                """ ,id, name, startDate,endDate, price, location);
+                """ ,id, name, startDateParser,endDateParser, price, location);
     }
     @Override
     public String toString() {

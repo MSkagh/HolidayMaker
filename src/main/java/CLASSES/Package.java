@@ -1,5 +1,9 @@
 package CLASSES;
 
+import util.Parser;
+
+import java.time.LocalDate;
+
 public class Package {
    private Destination destination;
    private Activity activity;
@@ -58,6 +62,8 @@ public Package(){}
                 """, id,name);
    }
    public void displayLongInfo(){
+      LocalDate startDateParser = Parser.intParseToDate(destination.getStartDate());
+      LocalDate endDateParser = Parser.intParseToDate(destination.getEndDate());
       System.out.printf("""
                 ID| %s | %s
                 Destination: %s
@@ -67,7 +73,7 @@ public Package(){}
                 Departure date: %s
                 Return date: %s
                 
-                """, id,name, destination.getName(), activity.getName(), lodging.getName(), totalPrice, destination.getStartDate(), destination.getEndDate());
+                """, id,name, destination.getName(), activity.getName(), lodging.getName(), totalPrice, startDateParser, endDateParser);
    }
 
    @Override
