@@ -1,5 +1,9 @@
 package CLASSES;
 
+import util.Parser;
+
+import java.time.LocalDate;
+
 public class Orders {
 
     private final int id;
@@ -37,6 +41,8 @@ public class Orders {
                 """, id,customerName,isPayed);
     }
     public void displayLongInfo(){
+        LocalDate startDateParser = Parser.intParseToDate(poop.getDestination().getStartDate());
+        LocalDate endDateParser = Parser.intParseToDate(poop.getDestination().getEndDate());
         if (poop !=null) {
             System.out.printf("""
                        ID| %s | %s  |Has paid: %s
@@ -56,7 +62,7 @@ public class Orders {
                        Additional comments:
                        %s
                        
-                    """, id, customerName, isPayed, customerPhoneNumber, customerEmail, poop.getName(), poop.getDestination().getName(), poop.getActivity().getName(), poop.getLodging().getName(), poop.getDestination().getStartDate(), poop.getDestination().getEndDate(), extra);
+                    """, id, customerName, isPayed, customerPhoneNumber, customerEmail, poop.getName(), poop.getDestination().getName(), poop.getActivity().getName(), poop.getLodging().getName(), startDateParser, endDateParser, extra);
         }else {
             System.out.println("Ops, something broke in the database. Code monkeys are on the job");
         }
